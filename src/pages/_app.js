@@ -39,14 +39,13 @@ export default function Home() {
 
           <a className="navbar-brand text-white order-lg-1 mx-lg-auto" href="#home">
             <Image
-              src="/img/icon-gradientbg-rgb.png"
+              src="/img/logo-fullcolor-negative-rgb copy.png"
               alt="Logo Akaal"
-              width={24}
-              height={24}
+              width={100}
+              height={32}
               className="d-inline-block align-text-top"
               priority
             />
-            Akaal
           </a>
 
           <div className="collapse navbar-collapse order-lg-2" id="navbarNav">
@@ -59,63 +58,38 @@ export default function Home() {
           </div>
         </div>
         <div className="contact-btn-container d-none d-lg-block">
-          <button>
+          {/* <button>
             <span className="text">Contact Us</span>
-          </button>
+          </button> */}
+         <a href="#" className="custom-button">
+              Contact Us
+          </a>
         </div>
       </nav>
 
       <section className="hero-section" id="home">
-        <header className="hero-header">
+      <header className="hero-header">
           <div className="hero-content" id="carouselSlides">
-            {/* Slide 1 */}
-            <div className="slide active">
-              <div className="rectangle-container">
-                <div className="content">
-                  <h2>
-                    Be The Game <span>Changer with</span>
-                    <br />
-                    One Stop <span>Digi-Solution</span>
-                  </h2>
-                  <p>
-                    Transformasikan bisnis Anda dengan solusi digital inovatif.
-                    Dari branding, digital marketing, hingga AI automation—
-                    kami siap membawa bisnis Anda ke level berikutnya!
-                  </p>
-                  {/* <a href="#services">
-                    <Image
-                      src="/img/Button.png"
-                      alt="Selengkapnya"
-                      width={180}
-                      height={60}
-                      className="cta-button"
-                    />
-                  </a> */}
-                </div>
+              {/* Slide 1 */}
+              <div className="slide active" style={{ width: '1920px', height: '630px' }}>
+                  <Image 
+                    src="/img/LandingPage.png" 
+                    alt="Deskripsi Gambar" 
+                    className="image-class" 
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
               </div>
-              <div className="hero-image">
-                <Image
-                  src="/img/Picture.png"
-                  alt="Hero Illustration"
-                  width={500}
-                  height={500}
-                  priority
-                />
-              </div>
-            </div>
 
-            {/* Slide 2 */}
-            <div className="slide">
-              {/* <Image
-                src="/img/image-2.png"
-                alt="AI Illustration"
-                width={500}
-                height={500}
-              /> */}
-              <div className="hero-image">
-                <div style={{ height: "300px" }}></div>
+              {/* Slide 2 */}
+              <div className="slide active"   style={{ position: 'relative', width: '1920px', height: '630px' }}>
+                    <Image 
+                      src="/img/image-2.png" 
+                      alt="Deskripsi Gambar" 
+                      className="image-class2" 
+                      fill
+                    />
               </div>
-            </div>
           </div>
         </header>
 
@@ -158,8 +132,9 @@ export default function Home() {
               <br />
               Daerah Khusus Ibukota Jakarta 12550
             </p>
-            <p>📞 081213957471</p>
-            <p>📧 asiakaryalumina@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> 081213957471</p>
+            <p><i class="fas fa-envelope"></i> asiakaryalumina@gmail.com</p>
+
           </div>
 
           {/* Kolom 2 */}
