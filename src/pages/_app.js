@@ -58,10 +58,7 @@ export default function Home() {
           </div>
         </div>
         <div className="contact-btn-container d-none d-lg-block">
-          {/* <button>
-            <span className="text">Contact Us</span>
-          </button> */}
-         <a href="#" className="custom-button">
+          <a href="#" className="custom-button">
               Contact Us
           </a>
         </div>
