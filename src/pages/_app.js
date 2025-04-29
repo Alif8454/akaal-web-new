@@ -4,6 +4,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Icon from '@mdi/react';
+import { mdiCheckCircleOutline } from '@mdi/js';
+import { mdiAccountHeartOutline } from '@mdi/js';
+import { mdiChartLine } from '@mdi/js';
+import { mdiReload } from '@mdi/js';
 import '../styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,8 +22,9 @@ export default function Home() {
       addHoverEffect();
     }
   }, []);
+  {/* Head End*/}
   
-
+   {/* Landing Page */}
   return (
     <>
       <Head>
@@ -59,7 +65,7 @@ export default function Home() {
         </div>
         <div className="contact-btn-container d-none d-lg-block">
           <a href="#" className="custom-button">
-              Contact Us
+              Contact
           </a>
         </div>
       </nav>
@@ -109,6 +115,119 @@ export default function Home() {
           />
         </div>
       </section>
+      {/* Landing Page End */}
+
+      {/* Section 1 */}
+      <section className="section1">
+      <div className="container">
+        {/* Left Side */}
+        <div className="left">
+          <h1>
+            Bringing Vision to Life,<br />Delivering Solutions.
+          </h1>
+          <p>
+            Kami membangun kepercayaan dan memperkuat identitas. Dengan menggabungkan teknologi terkini
+            dan inovasi kreatif, kami meningkatkan efektivitas serta jangkauan kampanye transformatif.
+            Komitmen kami untuk memahami setiap kebutuhan unik memastikan bahwa setiap solusi yang kami
+            hadirkan memberikan dampak nyata, beresonansi dengan audiens Anda, dan mendorong pertumbuhan yang berkelanjutan.
+          </p>
+        </div>
+
+        {/* Right Side */}
+        <div className="right">
+          <div className="item">
+          <div className="icon">
+          <Icon path={mdiCheckCircleOutline} size={1.2} />
+          </div>
+            <div className="text">
+              <h3>Were a proven partner</h3>
+              <p>lebih dari 100 brand telah sukses berkembang bersama kami</p>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="icon">
+              <Icon path={mdiReload} size={1} />
+            </div>
+            <div className="text">
+              <h3>We Make Their Brand Speak</h3>
+              <p>Mengubah brand menjadi suara yang kuat dan berpengaruh.</p>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="icon">
+              <Icon path={mdiAccountHeartOutline} size={1.2} />
+            </div>
+            <div className="text">
+              <h3>We Create Loyalist</h3>
+              <p>Membangun hubungan emosional yang menciptakan pelanggan setia.</p>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="icon">
+               <Icon path={mdiChartLine} size={1.2} />
+            </div>
+            <div className="text">
+              <h3>We Increase Value</h3>
+              <p>Mengoptimalkan strategi untuk meningkatkan daya saing dan nilai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* Section 1 End*/}
+
+    {/* Section 2 */}
+    <section className="section2">
+      <div className="container-section2">
+        <div className="left-serv">
+            <Image src="/img/Iphone.png"  width={280} 
+              height={300} alt="iPhone" className="iphone-img" />  
+        </div>
+        <div className="right-serv">
+          <h2 className="section-title"><span className="line"></span> Our Services</h2>
+          <div className="card-grid">
+            {[
+              {
+                id: '01',
+                title: 'Digital Strategy',
+                items: ['Digital Marketing', 'Omni-Channel Advertising', 'Event Planning & Management']
+              },
+              {
+                id: '02',
+                title: 'Visual Experience',
+                items: ['Branding & Design', 'Photography & Videography', '3D Motion & Modeling']
+              },
+              {
+                id: '03',
+                title: 'Business Apps',
+                items: ['Custom Solution Systems', 'Creative Development', 'Data Analysis']
+              },
+              {
+                id: '04',
+                title: 'Marketing Agency',
+                items: ['Branding', 'Marketing Strategies', 'Media Monitoring']
+              }
+            ].map(card => (
+              <div key={card.id} className="card">
+                <span className="card-number">{card.id}</span>
+                <h3>{card.title}</h3>
+                <ul>
+                  {card.items.map((item, idx) => <li key={idx}>{item}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="service-btn-wrapper">
+            <button className="service-btn">Our Services</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* Section 2 End*/}
+
 
       {/* FOOTER */}
       <footer className="footer">
@@ -169,6 +288,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      {/* FOOTER END */}
     </>
   );
 }

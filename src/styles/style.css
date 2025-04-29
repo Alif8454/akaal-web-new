@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family:  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter';
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -32,7 +32,7 @@ body {
 
 .navbar-nav .underline {
   position: absolute;
-  bottom: 0;
+  bottom: -20;
   height: 2px;
   background-color: #9747FF;
   transition: left 0.3s ease, width 0.3s ease;
@@ -42,8 +42,8 @@ body {
 
 .nav-link {
     color: white !important;
-    font-family: 'Inter', sans-serif; 
-    font-weight: 500;
+    font-family: 'Inter'; 
+    font-weight: 300;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
@@ -85,7 +85,7 @@ body {
 /* contact-btn */
 .custom-button {
   display: inline-block;
-  padding: 7px 35px;
+  padding: 8px 24px;
   border: 2px solid transparent; 
   border-radius: 999px;
   position: relative;
@@ -93,7 +93,8 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   text-decoration: none;
-  font-weight: bold;
+  font-family:inter;  
+  font-weight: 400;
   font-size: 16px;
   color: linear-gradient(to right, #7939CC, #22A6BB); 
   transition: all 0.3s ease;
@@ -232,12 +233,209 @@ body {
     object-fit: cover;
   }
 /*Hero Section End  */
+
+.section1 {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #1a0142, #360089);
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  flex: 1 1 50%;
+}
+
+.left h1 {
+  font-size: 48px;
+  color: transparent;
+  background: linear-gradient(90deg, #C191FF, #FFFFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.left p {
+  color: #b0b0b0;
+  font-size: 16px;
+  line-height: 1.8;
+  font: 'Inter';
+}
+
+.right {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.text h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.text p {
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.section2 {
+  background: linear-gradient(90deg, #190029 0%, #2b0080 100%);
+  color: white;
+  padding: 80px 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-section2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.left-serv {
+  width: 100%;
+  max-width: 300px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.iphone-img {
+  width: 280px;
+  height: auto;
+}
+
+.right-serv {
+  flex: 1;
+  min-width: 320px;
+  max-width: 720px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #d3aaff;
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title .line {
+  flex: 1;
+  height: 1px;
+  background: #b87eff;
+  opacity: 0.6;
+  margin-right: 20px;
+  transform: translateX(-20px);
+  width: 150px;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.card-number {
+  color: #b87eff;
+  font-size: 24px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: white;
+}
+
+.card ul li {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.service-btn-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.service-btn {
+  background: linear-gradient(to right, #c191ff, #ffffff);
+  background-size: 200% 100%;
+  background-position: left;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  color: #300050;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-position 0.5s ease;
+}
+
+
+.service-btn:hover {
+  background: linear-gradient(to left, #c191ff, #ffffff);
+}
+
   
 
   .footer {
     background-color: #040016;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter';
     padding: 4rem 2rem;
   }
   
