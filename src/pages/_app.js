@@ -110,6 +110,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-container">
           {/* Kolom 1 */}
