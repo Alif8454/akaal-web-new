@@ -10,11 +10,10 @@
 </head>
 <body>
   <div class="countdown-section">
-    <!-- TEST -->
-      <img src="img/Frame 17.svg" alt="Rocket Turtle" class="logo-img">
-      <h1>Something <span class="highlight">BIG</span> is launching soon</h1>
-      <p>Be The Game Changer with One Stop Digi-Solution</p>
-      <img src="img/roket.png" alt="Rocket Turtle" class="rocket-img">
+    <img src="img/Frame 17.svg" alt="Rocket Turtle" class="logo-img">
+    <h1>Something <span class="highlight">BIG</span> is launching soon</h1>
+    <p>Be The Game Changer with One Stop Digi-Solution</p>
+    <img src="img/roket.png" alt="Rocket Turtle" class="rocket-img">
 
     <div class="countdown" id="countdown">
       <div class="time-box">
@@ -23,59 +22,49 @@
       </div>
       <div class="time-box">
         <span id="hours">00</span>
-        <small>Hour</small>
+        <small>Hours</small>
       </div>
       <div class="time-box">
         <span id="minutes">00</span>
-        <small>Min</small>
+        <small>Minutes</small>
       </div>
       <div class="time-box">
         <span id="seconds">00</span>
-        <small>Sec</small>
+        <small>Seconds</small>
       </div>
     </div>
-    
   </div>
 
   <script>
 
-    // Cek apakah sudah ada launchTime di localStorage
-let launchTime = localStorage.getItem("launchTime");
+    const targetDate = new Date('May 13, 2025 00:00:00').getTime();
 
-if (!launchTime) {
-  // Jika belum ada, set ke 14 hari dari sekarang
-  const launchDate = new Date();
-  launchDate.setDate(launchDate.getDate() + 14);
-  launchTime = launchDate.getTime();
-
-  // Simpan ke localStorage
-  localStorage.setItem("launchTime", launchTime);
-} else {
-  // Convert kembali ke number
-  launchTime = parseInt(launchTime);
-}
-
-const countdown = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = launchTime - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").textContent = days.toString().padStart(2, '0');
-  document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-  document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-  document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-
-  if (distance < 0) {
-    clearInterval(countdown);
-    document.getElementById("countdown").innerHTML = "🚀 Launched!";
-    localStorage.removeItem("launchTime"); // Reset agar bisa mulai ulang nanti
-  }
-}, 1000);
-
+    // Update the countdown every second
+    const countdown = setInterval(function() {
+      // Get current date and time
+      const now = new Date().getTime();
+      
+      // Calculate the time remaining
+      const timeRemaining = targetDate - now;
+      
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      
+      // Display the countdown
+      document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+      
+      // If the countdown is over
+      if (timeRemaining < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown').innerHTML = '<h2>LAUNCHED!</h2>';
+      }
+    }, 1000);
   </script>
 </body>
 </html>
