@@ -154,53 +154,55 @@ export default function Home() {
     {/* Section 1 End*/}
 
     {/* Section 2 */}
-    <section className="section2">
-    <h2 className="section-title"><span className="line"></span> Our Services</h2>
-      <div className="container-section2">
-        <div className="left-serv">
-            <Image src="/img/Iphone.png"  width={280} 
-              height={300} alt="iPhone" className="iphone-img" />  
+      <section className="section2">
+        <div class="section-heading">
+          <Image src="/img/TitleServices.png" width={1110} height={35} alt="lines"/>
         </div>
-        <div className="right-serv">
-          
-          <div className="card-grid">
-            {[
-              {
-                id: '01',
-                title: 'Digital Strategy',
-                items: ['Digital Marketing', 'Omni-Channel Advertising', 'Event Planning & Management']
-              },
-              {
-                id: '02',
-                title: 'Visual Experience',
-                items: ['Branding & Design', 'Photography & Videography', '3D Motion & Modeling']
-              },
-              {
-                id: '03',
-                title: 'Business Apps',
-                items: ['Custom Solution Systems', 'Creative Development', 'Data Analysis']
-              },
-              {
-                id: '04',
-                title: 'Marketing Agency',
-                items: ['Branding', 'Marketing Strategies', 'Media Monitoring']
-              }
-            ].map(card => (
-              <div key={card.id} className="card">
-                <span className="card-number">{card.id}</span>
-                <h3>{card.title}</h3>
-                <ul>
-                  {card.items.map((item, idx) => <li key={idx}>{item}</li>)}
-                </ul>
+        <div className='section2-wrapper'>
+          <div className="container-section2">
+            <div className="left-serv">
+              <Image src="/img/Iphone.png" width={280} height={300} alt="iPhone" className="iphone-img" />
+            </div>
+            <div className="right-serv">
+              <div className="card-grid">
+                {[
+                  {
+                    id: '01',
+                    title: 'Digital Strategy',
+                    items: ['Digital Marketing', 'Omni-Channel Advertising', 'Event Planning & Management']
+                  },
+                  {
+                    id: '02',
+                    title: 'Visual Experience',
+                    items: ['Branding & Design', 'Photography & Videography', '3D Motion & Modeling']
+                  },
+                  {
+                    id: '03',
+                    title: 'Business Apps',
+                    items: ['Custom Solution Systems', 'Creative Development', 'Data Analysis']
+                  },
+                  {
+                    id: '04',
+                    title: 'Marketing Agency',
+                    items: ['Branding', 'Marketing Strategies', 'Media Monitoring']
+                  }
+                ].map(card => (
+                  <div key={card.id} className="card">
+                    <span className="card-number">{card.id}</span>
+                    <h3>{card.title}</h3>
+                    <ul>
+                      {card.items.map((item, idx) => <li key={idx}>{item}</li>)}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
         <div className="service-btn-wrapper">
           <button className="service-btn">Our Services</button>
         </div>
-    </section>
+      </section>
     {/* Section 2 End*/}
 
     {/* Section 3 */}
@@ -289,9 +291,6 @@ export default function Home() {
                   <p className="client">Client</p>
                   <h3>Bank Syariah Indonesia</h3>
                   <p className="location">Jakarta, Indonesia</p>
-                  <div className="card-arrow">
-                    <button>&rarr;</button>
-                  </div>
                 </div>
               </div>
             ))}
@@ -299,7 +298,7 @@ export default function Home() {
         </div>
 
         <div className="clients-section">
-          <h2 className="section-title"> Clients and Partners<span className="line"></span></h2>  
+        <Image src="/img/TitleServices.png" width={1110} height={35} alt="lines"/>
           <div className="clients-carousel">
             <button className="carousel-arrow">&#8592;</button>
             
