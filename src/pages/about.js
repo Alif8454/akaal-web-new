@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { addHoverEffect } from '../../utils/hover';
 import '../styles/style.css';
+import '../styles/mobile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Icon from '@mdi/react';
 import { mdiCheckCircleOutline } from '@mdi/js';

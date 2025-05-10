@@ -15,6 +15,7 @@ import { mdiCreditCardOutline } from "@mdi/js";
 import { mdiChevronRight } from "@mdi/js";
 import { mdiMenu, mdiClose } from "@mdi/js";
 import "../styles/style.css";
+import '../styles/mobile.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Link from "next/link";
@@ -40,6 +41,8 @@ export default function Home() {
         <title>Akaal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+
+      
 
       <section className="hero-section" id="home">
         <header className="hero-header">

@@ -15,6 +15,7 @@ import { mdiCreditCardOutline } from "@mdi/js";
 import { mdiChevronRight } from "@mdi/js";
 import { mdiMenu, mdiClose } from "@mdi/js";
 import "../styles/style.css";
+import '../styles/mobile.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Link from "next/link";
@@ -24,7 +25,11 @@ import { addHoverEffect } from "../../utils/hover";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-export default function service() {
+export default function Service() {
+   useEffect(() => {
+    addHoverEffect();
+    initCarousel(); // Jika carousel masih digunakan
+  }, []);
   return (
     <>
       <section className="hero-section" id="home">

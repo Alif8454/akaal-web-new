@@ -12,15 +12,6 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <button
-          className="navbar-toggler text-white"
-          type="button"
-          aria-label="Toggle navigation"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <Icon path={isMenuOpen ? mdiClose : mdiMenu} size={1} />
-        </button>
-
         <Link href="/" className="navbar-brand text-white order-lg-1 mx-lg-auto">
           <Image
             src="/img/logo-fullcolor-negative-rgb.png"
