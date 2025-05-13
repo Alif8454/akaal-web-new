@@ -42,8 +42,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      
-
       <section className="hero-section" id="home">
         <header className="hero-header">
           <div className="hero-content" id="carouselSlides">

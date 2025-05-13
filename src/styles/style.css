@@ -360,7 +360,11 @@ html {
 }
 
 .card:hover {
-  background: rgba(151, 71, 255, 0.1);
+  /* background: rgba(151, 71, 255, 0.1); */
+   background: linear-gradient(135deg, rgba(151, 71, 255, 0.25), rgba(255, 255, 255, 0.05));
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(151, 71, 255, 0.3);
+  border: 1px solid rgba(151, 71, 255, 0.8);
 }
 
 .card-number {
@@ -396,7 +400,7 @@ html {
 }
 
 .service-btn:hover {
-  filter: brightness(1.1);
+   background: linear-gradient(to left, #9747ff, #5b2b99);
 }
 
 /* Section3 */
@@ -1160,16 +1164,6 @@ html {
 .social-icons a:hover {
   transform: scale(1.2);
   color: #9747ff;
-}
-
-.navbar-toggler {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar-toggler svg {
-  color: white;
 }
 
 .about-content-image-wrapper {
