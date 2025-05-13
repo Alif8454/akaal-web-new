@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Something BIG is launching soon</title>
-  <link rel="icon" href="img/icon-gradientbg-rgb.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Something BIG is launching soon</title>
+    <link rel="icon" href="img/icon-gradientbg-rgb.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<style>
-      body {
+  <style>
+    body {
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: "Plus Jakarta Sans", sans-serif;
       background: linear-gradient(to bottom, #10002b, #240046);
       color: #b3eaff;
       text-align: center;
@@ -38,7 +41,7 @@
 
     .highlight {
       font-weight: 800;
-      color: #5BE0E5;
+      color: #5be0e5;
     }
 
     p {
@@ -75,7 +78,7 @@
     .time-box span {
       font-size: 28px;
       font-weight: 300;
-      background: linear-gradient(to bottom right, #ffffff, #2ACFEA);
+      background: linear-gradient(to bottom right, #ffffff, #2acfea);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: block;
@@ -99,34 +102,34 @@
       .countdown-section {
         padding: 30px 15px;
       }
-      
+
       h1 {
         font-size: 24px;
       }
-      
+
       p {
         font-size: 16px;
       }
-      
+
       .countdown {
         gap: 12px;
       }
-      
+
       .time-box {
         padding: 10px 15px;
         min-width: 50px;
       }
-      
+
       .time-box span {
         font-size: 24px;
       }
-      
+
       .time-box small {
         font-size: 10px;
       }
-      
+
       .logo-img {
-      width: 144px;
+        width: 144px;
       }
     }
 
@@ -135,13 +138,13 @@
       h1 {
         font-size: 36px;
       }
-      
+
       .countdown {
         gap: 16px;
       }
       .logo-img {
-    width: 144px;
-  }
+        width: 144px;
+      }
     }
 
     /* Desktop and larger screens */
@@ -149,14 +152,13 @@
       .countdown-section {
         padding: 50px 20px;
       }
-      
+
       .rocket-img {
         max-width: 600px;
       }
       .logo-img {
-    width: 144px;
-  }
-      
+        width: 144px;
+      }
     }
 
     /* Extra large screens */
@@ -164,89 +166,100 @@
       .countdown-section {
         max-width: 1000px;
       }
-      
+
       h1 {
         font-size: 40px;
       }
-      
+
       p {
         font-size: 20px;
       }
-      
+
       .time-box {
         padding: 20px 30px;
         min-width: 80px;
       }
-      
+
       .time-box span {
         font-size: 36px;
       }
     }
 
     @media (max-width: 390px) {
-  .logo-img {
-    width: 144px;
-  }
-}
-</style>
+      .logo-img {
+        width: 144px;
+      }
+    }
+  </style>
 
-<body>
-  <div class="countdown-section">
-    <img src="img/Frame 17.svg" alt="Rocket Turtle" class="logo-img">
-    <h1>Something <span class="highlight">BIG</span> <br> is launching soon</h1>
-    <p>Be The Game Changer <br> with One Stop Digi-Solution</p>
-    <img src="img/roket.png" alt="Rocket Turtle" class="rocket-img">
+  <body>
+    <div class="countdown-section">
+      <img src="img/Frame 17.svg" alt="Rocket Turtle" class="logo-img" />
+      <h1>
+        Something <span class="highlight">BIG</span> <br />
+        is launching soon
+      </h1>
+      <p>
+        Be The Game Changer <br />
+        with One Stop Digi-Solution
+      </p>
+      <img src="img/roket.png" alt="Rocket Turtle" class="rocket-img" />
 
-    <div class="countdown" id="countdown">
-      <div class="time-box">
-        <span id="days">00</span>
-        <small>Days</small>
-      </div>
-      <div class="time-box">
-        <span id="hours">00</span>
-        <small>Hours</small>
-      </div>
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <small>Minutes</small>
-      </div>
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <small>Seconds</small>
+      <div class="countdown" id="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
+    <script>
+      const targetDate = new Date('May 15, 2025 15:00:00').getTime();
 
-    const targetDate = new Date('May 13, 2025 00:00:00').getTime();
+const countdown = setInterval(function () {
+  const now = new Date().getTime();
+  const timeRemaining = targetDate - now;
 
-    // Update the countdown every second
-    const countdown = setInterval(function() {
-      // Get current date and time
-      const now = new Date().getTime();
-      
-      // Calculate the time remaining
-      const timeRemaining = targetDate - now;
-      
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-      
-      // Display the countdown
-      document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
-      document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
-      
-      // If the countdown is over
-      if (timeRemaining < 0) {
-        clearInterval(countdown);
-        document.getElementById('countdown').innerHTML = '<h2>LAUNCHED!</h2>';
-      }
-    }, 1000);
-  </script>
-</body>
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor(
+    (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("hours").innerHTML = hours
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("minutes").innerHTML = minutes
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("seconds").innerHTML = seconds
+    .toString()
+    .padStart(2, "0");
+
+  if (timeRemaining < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = "<h2>LAUNCHED!</h2>";
+  }
+}, 1000);
+
+    </script>
+  </body>
 </html>
