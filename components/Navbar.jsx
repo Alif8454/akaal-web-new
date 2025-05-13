@@ -11,8 +11,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
-        <Link href="/" className="navbar-brand text-white order-lg-1 mx-lg-auto">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
+        
+        {/* Logo di kiri */}
+        <Link href="/" className="navbar-brand text-white">
           <Image
             src="/img/logo-fullcolor-negative-rgb.png"
             alt="Logo Akaal"
@@ -23,8 +25,9 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className={`custom-collapse order-lg-2 ${isMenuOpen ? 'show' : ''}`}>
-          <ul className="navbar-nav mx-auto">
+        {/* Menu - Tengah pada layar besar */}
+        <div className={`custom-collapse ${isMenuOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav d-flex gap-4">
             <li className="nav-item">
               <Link href="/" className="nav-link">Home</Link>
             </li>
@@ -39,10 +42,11 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-      </div>
 
-      <div className="contact-btn-container d-none d-lg-block">
-        <Link href="/contact" className="custom-button">Contact</Link>
+        {/* Tombol Contact di kanan */}
+        <div className="contact-btn-container d-none d-lg-block">
+          <Link href="/contact" className="custom-button">Contact</Link>
+        </div>
       </div>
     </nav>
   );
