@@ -88,7 +88,7 @@ export default function About() {
       {/* Vision */}
       <div className="vision-mission-container"> 
         <div className="mission-header">
-          <h2>Vission</h2>
+          <h2>Vision</h2>
           <p>
           Membangun ekosistem digital yang kolaboratif, terintegrasi, dan inovatif untuk menciptakan dampak positif yang lebih luas.
           </p>

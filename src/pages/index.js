@@ -52,7 +52,7 @@ export default function Home() {
                   src="/img/LandingPage.png"
                   alt="Deskripsi Gambar"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", objectPosition: "center"  }}
                 />
               </div>
             </div>
