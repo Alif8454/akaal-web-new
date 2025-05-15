@@ -205,26 +205,28 @@ body {
 
 .section1 {
   width: 100%;
-  min-height: 100vh;
   background: linear-gradient(to right, #1a0142, #360089);
   display: flex;
   align-items: center;
-  padding: 60px 20px 0px;
+  padding: 96px 20px 0px;
   box-sizing: border-box;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 40px 16px;
 }
 
 .left {
-  flex: 1 1 50%;
+  flex: 1 1 38%;
+  padding-left: 50px;
+  margin-right: 0;
 }
 
 .left h1 {
@@ -245,16 +247,18 @@ body {
 }
 
 .right {
-  flex: 1 1 40%;
+  flex: 1 1 10%;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 300px;
 }
 
 .item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  width: fit-content;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -310,7 +314,7 @@ body {
   width: 100%;
 }
 .section2 {
-  padding: 20px 20px 60px;
+  padding: 20px 20px 96px;
   background: linear-gradient(to right, #1a0142, #360089);
   color: #fff;
   text-align: center;
@@ -647,9 +651,11 @@ body {
 .title {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  padding-left: 0px;
+  padding-bottom: 24px;
   gap: 12px;
-  padding-right: 32px;
+  max-width: 1152px;
 }
 
 .title-line {
@@ -971,16 +977,17 @@ body {
 }
 
 .service-box {
-  margin-bottom: 40px;
-  transition: 
-    background 0.3s ease,
-    border 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  background-color: transparent;
+  border-radius: 16px;
+  padding: 24px 32px;
+  transition: all 0.3s ease;
+  color: white;
 }
 .service-box:hover {
+  background: linear-gradient(to top, rgb(86, 18, 174), rgb(47, 6, 100));
   transform: translateY(-8px);
   cursor: pointer;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .service-box h3 {
