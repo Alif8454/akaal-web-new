@@ -170,7 +170,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 742px;
   padding: 0 16px;
   box-sizing: border-box;
   overflow: auto;
@@ -217,7 +217,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 96px;
   align-items: center;
   justify-content: center;
   padding: 40px 16px;
@@ -251,7 +251,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 300px;
+  max-width: fit-content;
 }
 
 .item {
@@ -260,6 +260,7 @@ body {
   gap: 20px;
   width: fit-content;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: fit-content;
 }
 
 .item:hover {
