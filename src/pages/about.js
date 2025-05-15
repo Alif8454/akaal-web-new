@@ -141,7 +141,7 @@ export default function About() {
     <section className="about-akaal-section" id="about">
       <div className="text-container">
         <div className="left-text">
-          <h5>Why Choose AKAAL</h5>
+          <h5>Why Choose AKAAL?</h5>
           <h2>
              Bringing Vision to Life,<br />Delivering Solutions.
           </h2>

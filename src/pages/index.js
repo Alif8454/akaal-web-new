@@ -118,7 +118,7 @@ export default function Home() {
               </div>
               <div className="text">
                 <h3>Were a proven partner</h3>
-                <p>lebih dari 100 brand telah sukses berkembang bersama kami</p>
+                <p>lebih dari 100 brand telah sukses <br></br> berkembang bersama kami</p>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
               <div className="text">
                 <h3>We Make Their Brand Speak</h3>
-                <p>Mengubah brand menjadi suara yang kuat dan berpengaruh.</p>
+                <p>Mengubah brand menjadi suara yang <br></br>kuat dan berpengaruh.</p>
               </div>
             </div>
 
@@ -139,7 +139,7 @@ export default function Home() {
               <div className="text">
                 <h3>We Create Loyalist</h3>
                 <p>
-                  Membangun hubungan emosional yang menciptakan pelanggan setia.
+                  Membangun hubungan emosional <br></br>yang menciptakan pelanggan setia.
                 </p>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
               <div className="text">
                 <h3>We Increase Value</h3>
                 <p>
-                  Mengoptimalkan strategi untuk meningkatkan daya saing dan
+                  Mengoptimalkan strategi untuk<br></br> meningkatkan daya saing dan
                   nilai.
                 </p>
               </div>
