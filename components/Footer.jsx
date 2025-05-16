@@ -25,8 +25,8 @@ export default function Footer() {
               Ragunan, Ps. Minggu, Kota Jakarta Selatan,<br />
               Daerah Khusus Ibukota Jakarta 12550
             </p>
-            <p><i className="fas fa-phone-alt"></i> 081213957471</p>
-            <p><i className="fas fa-envelope"></i> asiakaryalumina@gmail.com</p>
+            <p><i className="fas fa-phone-alt"></i>081213957471</p>
+            <p><i className="fas fa-envelope"></i>asiakaryalumina@gmail.com</p>
           </div>
   
           {/* Kolom 2 */}

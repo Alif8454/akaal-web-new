@@ -91,7 +91,7 @@ export default function Home() {
 
       {/* Section 1 */}
       <section className="section1">
-        <div className="container">
+        <div className="container-section1">
           {/* Left Side */}
           <div className="left">
             <h1>
