@@ -15,7 +15,7 @@ import { mdiCreditCardOutline } from "@mdi/js";
 import { mdiChevronRight } from "@mdi/js";
 import { mdiMenu, mdiClose } from "@mdi/js";
 import "../styles/style.css";
-import '../styles/mobile.css';
+import "../styles/mobile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Link from "next/link";
@@ -52,7 +52,7 @@ export default function Home() {
                   src="/img/LandingPage.png"
                   alt="Deskripsi Gambar"
                   fill
-                  style={{ objectFit: "cover", objectPosition: "center"  }}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
                 />
               </div>
             </div>
@@ -118,7 +118,10 @@ export default function Home() {
               </div>
               <div className="text">
                 <h3>Were a proven partner</h3>
-                <p>lebih dari 100 brand telah sukses <br></br> berkembang bersama kami</p>
+                <p>
+                  lebih dari 100 brand telah sukses <br></br> berkembang bersama
+                  kami
+                </p>
               </div>
             </div>
 
@@ -128,7 +131,10 @@ export default function Home() {
               </div>
               <div className="text">
                 <h3>We Make Their Brand Speak</h3>
-                <p>Mengubah brand menjadi suara yang <br></br>kuat dan berpengaruh.</p>
+                <p>
+                  Mengubah brand menjadi suara yang <br></br>kuat dan
+                  berpengaruh.
+                </p>
               </div>
             </div>
 
@@ -139,7 +145,8 @@ export default function Home() {
               <div className="text">
                 <h3>We Create Loyalist</h3>
                 <p>
-                  Membangun hubungan emosional <br></br>yang menciptakan pelanggan setia.
+                  Membangun hubungan emosional <br></br>yang menciptakan
+                  pelanggan setia.
                 </p>
               </div>
             </div>
@@ -151,8 +158,8 @@ export default function Home() {
               <div className="text">
                 <h3>We Increase Value</h3>
                 <p>
-                  Mengoptimalkan strategi untuk<br></br> meningkatkan daya saing dan
-                  nilai.
+                  Mengoptimalkan strategi untuk<br></br> meningkatkan daya saing
+                  dan nilai.
                 </p>
               </div>
             </div>
@@ -163,14 +170,13 @@ export default function Home() {
 
       {/* Section 2 */}
       <section className="section2">
-    
         <div className="title-wraper">
           <div className="title">
             <div className="title-line" />
             <h2 className="title-text">Our Services</h2>
           </div>
         </div>
-        
+
         <div className="section2-wrapper">
           <div className="container-section2">
             <div className="left-serv">
@@ -236,9 +242,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="service-btn-wrapper">
-          <button className="service-btn">Our Services</button>
-        </div>
+        <Link href="/service">
+          <div className="service-btn-wrapper">
+            <button className="service-btn">Our Services</button>
+          </div>
+        </Link>
       </section>
       {/* Section 2 End*/}
 
@@ -266,9 +274,9 @@ export default function Home() {
             kami berkomitmen untuk mendorong kesuksesan digital Anda melalui
             keahlian, kreativitas, dan teknologi terbaru.
           </p>
-          <a href="#about" className="btn btn-primary">
+          <Link href="/about" className="btn btn-primary">
             About AKAAL
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -338,7 +346,7 @@ export default function Home() {
               mereka.
             </p>
             <h2 className="section5-right">
-             <span> Our Latest Projects.</span>
+              <span> Our Latest Projects.</span>
             </h2>
           </div>
           <div className="card-grid">
@@ -365,11 +373,11 @@ export default function Home() {
         <div className="clients-section">
           {/* garis */}
           <div className="title-wraper">
-          <div className="title">
-            <h2 className="title-text">Clients and Partners</h2>
-            <div className="title-line" />
+            <div className="title">
+              <h2 className="title-text">Clients and Partners</h2>
+              <div className="title-line" />
+            </div>
           </div>
-        </div>
           <div className="clients-carousel">
             <button className="carousel-arrow">&#8592;</button>
 

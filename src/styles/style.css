@@ -417,7 +417,7 @@ body {
 /* Section3 */
 .section3 {
   position: relative;
-  padding: 80px 20px;
+  padding: 96px 20px;
   background: radial-gradient(circle at center, #2a0f4d, #0f0015);
   overflow: hidden;
 }
@@ -510,7 +510,7 @@ body {
   position: relative;
   background: linear-gradient(to right, #0794c5, #090d28);
   color: white;
-  padding: 100px 20px;
+  padding: 96px 20px;
   overflow: hidden;
 }
 
@@ -618,7 +618,7 @@ body {
 .section5 {
   background: linear-gradient(135deg, #0f0017, #1a0040);
   color: white;
-  padding: 60px 20px;
+  padding: 96px 20px;
   font-family: sans-serif;
 }
 
