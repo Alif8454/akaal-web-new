@@ -183,7 +183,7 @@ body {
 .about-content-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1152px;
+  max-width: 1256px;
   aspect-ratio: 12 / 5;
 }
 /*Hero Section End  */
@@ -848,7 +848,7 @@ body {
 /* About-section */
 .about-akaal-section {
   background-color: #0d0b1f;
-  padding: 100px 5vw;
+  padding: 96px 5vw;
   color: #ffffff;
 }
 
@@ -858,7 +858,7 @@ body {
   gap: 40px;
   align-items: start;
   max-width: 1152px;
-  margin: 0 auto 60px;
+  margin: 0 auto 48px;
 }
 
 .about-akaal-section .left-text h5 {
@@ -892,10 +892,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+
 }
 
 .about-akaal-section .about-image {
-  max-width: 100%;
+  max-width: 1152px;
   height: auto;
   border-radius: 12px;
 }
@@ -932,7 +934,7 @@ body {
 }
 
 .image-wrapper {
-  margin: 40px 0;
+  margin: 0;
   text-align: center;
 }
 .about-image {
@@ -1005,11 +1007,20 @@ body {
 }
 
 /* Vision & Mission Styles */
+
+.vismis{
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+
 .vision-mission-container {
-  margin-top: 80px;
+  margin-top: 48px;
   background-color: #1a0c3b;
   padding: 40px;
   border-radius: 20px;
+  max-width: 1152px;
 }
 
 .vision-box {
