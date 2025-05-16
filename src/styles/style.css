@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', 'Inter';
+  font-family: "Plus Jakarta Sans", "Inter";
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Inter';
+  font-family: "Plus Jakarta Sans", "Inter";
   line-height: 1.6;
   color: #333;
   background-color: #f8f9fa;
@@ -183,24 +183,9 @@ body {
 .about-content-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1152px;
   aspect-ratio: 12 / 5;
 }
-
-
-
-/* .slide .hero-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.slide .hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  object-fit: cover;
-} */
 /*Hero Section End  */
 
 .section1 {
@@ -220,12 +205,10 @@ body {
   gap: 96px;
   align-items: center;
   justify-content: center;
-  padding: 40px 16px;
 }
 
 .left {
   flex: 1 1 38%;
-  padding-left: 50px;
   margin-right: 0;
 }
 
@@ -286,8 +269,9 @@ body {
 }
 
 /* Section2 */
+/* Section2 */
 .section-heading {
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto 30px;
   display: flex;
   align-items: center;
@@ -313,9 +297,10 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: 0 auto;
 }
 .section2 {
-  padding: 20px 20px 96px;
+  padding: 96px 24px 96px;
   background: linear-gradient(to right, #1a0142, #360089);
   color: #fff;
   text-align: center;
@@ -331,7 +316,8 @@ body {
 }
 
 .container-section2 {
-  max-width: 1200px;
+  max-width: 1152px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -346,7 +332,7 @@ body {
   align-items: center;
 }
 .iphone-img {
-  width: 95%;
+  width: 100%;
   height: auto;
   max-height: 500px;
   object-fit: contain;
@@ -357,13 +343,15 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 100%;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(250px, 1fr));
   gap: 20px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .card {
@@ -373,7 +361,8 @@ body {
   padding: 20px;
   text-align: left;
   color: #ccc;
-  width: 300px;
+  width: 100%;
+  height: 100%;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -447,7 +436,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -540,7 +529,7 @@ body {
 .section4 .content {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
   text-align: left;
 }
@@ -634,19 +623,17 @@ body {
 }
 
 .section5-container {
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 24px;
   margin: 0 auto;
-  padding: 60px 24px;
   width: 100%;
   box-sizing: border-box;
 }
 
 /* title only */
 .title-wraper {
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
-  padding-inline: 44px;
 }
 
 .title {
@@ -677,9 +664,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
-  padding-inline: 24px;
+  padding: 0px 0px 24px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -870,12 +857,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto 60px;
 }
 
 .about-akaal-section .left-text h5 {
- color: #b180f5;
+  color: #b180f5;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -885,7 +872,7 @@ body {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.4;
-  background: linear-gradient(92deg, #FFF 0.37%, #AAECF7 66.57%);
+  background: linear-gradient(92deg, #fff 0.37%, #aaecf7 66.57%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -964,7 +951,7 @@ body {
   align-items: center;
   gap: 40px;
   padding: 60px 20px;
-  max-width: 1200px;
+  max-width: 1152px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -1065,9 +1052,9 @@ body {
 
 .mission-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
@@ -1081,15 +1068,16 @@ body {
   );
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
-   transition: 
-    background 0.3s ease,
-    border 0.3s ease,
-    transform 0.3s ease,
+  transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease;
   padding: 20px;
 }
 .mission-card:hover {
-  background: linear-gradient(135deg,rgba(129, 88, 186, 0.67),rgba(124, 69, 207, 0.42));
+  background: linear-gradient(
+    135deg,
+    rgba(129, 88, 186, 0.67),
+    rgba(124, 69, 207, 0.42)
+  );
   cursor: pointer;
   transform: translateY(-8px);
 }
@@ -1121,15 +1109,15 @@ body {
 }
 
 .feature-highlight {
-   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-  grid-template-rows: repeat(2, auto);   /* 2 baris */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, auto); 
   gap: 30px;
-  background: linear-gradient(135deg,rgb(59, 16, 100), #6d19bb);
+  background: linear-gradient(135deg, rgb(59, 16, 100), #6d19bb);
   padding: 40px;
   border-radius: 16px;
   color: white;
-  max-width: 1200px;
+  max-width: 1152px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -1138,13 +1126,10 @@ body {
   display: flex;
   gap: 15px;
   align-items: flex-start;
-  transition: 
-    background 0.3s ease,
-    border 0.3s ease,
-    transform 0.3s ease,
+  transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-.feature-box:hover{
+.feature-box:hover {
   transform: translateY(-8px);
   cursor: pointer;
 }
@@ -1237,5 +1222,3 @@ body {
   transform: scale(1.2);
   color: #9747ff;
 }
-
-
