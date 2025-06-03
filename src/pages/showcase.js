@@ -182,6 +182,10 @@ export default function Showcase() {
                 className="home-contact-logo"
               />
             </div>
+
+            <div className="other-left">
+              <h3>Other Projects</h3>
+            </div>
             <div className="card-grid">
               {cards.length > 0 ? (
                 cards.map((card) => <ProjectCard key={card.id} data={card} />)
