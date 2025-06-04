@@ -28,7 +28,7 @@ const Loader = () => {
         color: 'white',
         fontSize: '1.2rem',
         marginTop: '20px'
-      }}>Loading Akaal...</p>
+      }}>Loading...</p>
     </div>
   );
 };

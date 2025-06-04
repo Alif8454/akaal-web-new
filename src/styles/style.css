@@ -406,8 +406,7 @@ body {
 }
 
 .donut-img {
-  left: -106px;
-  top: -235px;
+  transform: translate(-29px, -59px);
 }
 
 .textColumn {
@@ -516,6 +515,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #feffff;
   line-height: 48px;
+  white-space: nowrap;
 }
 
 .home-contact-akaal {
@@ -544,12 +544,13 @@ body {
 .home-contact-button {
   background: linear-gradient(90deg, #6543ec 0%, #7939cc 100%);
   border: none;
-  padding: 12px 16px;
+  padding: 12px 24px;
   color: #fafcfd;
-  border-radius: 24px;
+  border-radius: 100px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  min-width: 180px;
 }
 
 .contact-row {
@@ -564,7 +565,7 @@ body {
   gap: 8px;
   border: 1px solid #c929dc;
   padding: 12px 16px;
-  border-radius: 20px;
+  border-radius: 100px;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
@@ -585,8 +586,7 @@ body {
 
 .home-contact-logo-container {
   position: absolute;
-  right: 48px;
-  top: 41px;
+  transform: translateX(calc(100% - -320px)) translateY(41px);
   width: 424px;
   height: 424px;
 }
@@ -1714,6 +1714,7 @@ body {
   color: white;
 }
 
+/* styles/style.css */
 .btn-idea {
   all: unset;
   align-items: center;
@@ -1722,41 +1723,20 @@ body {
   gap: 24px;
   max-width: 1296px;
   position: relative;
-}
-
-.btn-idea .idea-text-wrapper {
-  all: unset;
-  align-items: flex-start;
-  background: linear-gradient(
-    90deg,
-    rgba(101, 67, 236, 1) 0%,
-    rgba(121, 57, 204, 1) 100%
-  );
-  color: white;
-  border-radius: 24px;
-  box-sizing: border-box;
-  display: inline-flex;
-  flex: 0 0 auto;
-  gap: 12px;
-  justify-content: center;
-  padding: 12px 16px;
-  position: relative;
+  cursor: pointer;
 }
 
 .btn-idea .idea-text {
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  color: var(--ikram-website-netral-background);
-  display: -webkit-box;
+  background: linear-gradient(90deg, #6543ec 0%, #7939cc 100%);
+  color: white;
+  border-radius: 24px;
+  padding: 12px 16px;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 16px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: fit-content;
+  transition: all 0.3s ease;
 }
 
+.btn-idea:hover .idea-text {
+  background: linear-gradient(90deg, #7939cc 0%, #6543ec 100%);
+  transform: translateY(-2px);
+}

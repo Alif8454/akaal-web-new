@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Loader from "../../components/Loader";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -58,10 +59,14 @@ import {
 } from "react-icons/fa";
 
 export default function Showcase() {
+  const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
     if (typeof window !== "undefined") {
       initCarousel();
       addHoverEffect();
@@ -69,8 +74,8 @@ export default function Showcase() {
 
     const fetchCards = async () => {
       const { data, error } = await supabase
-        .from("client_cards")
-        .select("id, image_url, client_name, location");
+        .from("portofolio")
+        .select("id, image_1, client_name, judul, slug");
 
       if (error) {
         console.error("Fetch error:", error);
@@ -81,55 +86,58 @@ export default function Showcase() {
     };
 
     fetchCards();
+
+    return () => clearTimeout(timer);
   }, []);
   return (
     <>
-    <section className="hero-section" id="home">
-            <header className="hero-header">
-              <div className="hero-content" id="carouselSlides">
-                <div className="slide active">
-                  <div className="about-content-image-wrapper">
-                    <Image
-                      src="/img/turning-ideas.png"
-                      alt="Deskripsi Gambar"
-                      fill
-                      style={{ objectFit: "contain" }}
-                    />
-                  </div>
+      {isLoading && <Loader />}
+      <div style={{ display: isLoading ? "none" : "block" }}>
+        <section className="hero-section" id="home">
+          <header className="hero-header">
+            <div className="hero-content" id="carouselSlides">
+              <div className="slide active">
+                <div className="about-content-image-wrapper">
+                  <Image
+                    src="/img/turning-ideas.png"
+                    alt="Deskripsi Gambar"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
                 </div>
               </div>
-            </header>
-            <div className="hero-navigation">
-              <Image
-                src="/img/Arrow-down.png"
-                alt="Arrow Down"
-                width={40}
-                height={40}
-                className="arrow-icon"
-                id="about"
-              />
             </div>
-          </section>
-      <section className="section2">
-        <h2 className="section-title">
-          Our Latest Projects
-        </h2>
-        <p className="section-desc">
-          Kami telah berkolaborasi dengan berbagai brand, menghadirkan solusi
-          digital yang memperkuat identitas dan memperluas jangkauan mereka.
-        </p>
-      </section>
-      <section className="section5">
-        <div className="section5-container">
-          <div className="card-grid">
-            {cards.length > 0 ? (
-              cards.map((card) => <ProjectCard key={card.id} data={card} />)
-            ) : (
-              <p>Loading...</p>
-            )}
+          </header>
+          <div className="hero-navigation">
+            <Image
+              src="/img/Arrow-down.png"
+              alt="Arrow Down"
+              width={40}
+              height={40}
+              className="arrow-icon"
+              id="about"
+            />
           </div>
-        </div>
-      </section>
+        </section>
+        <section className="section2">
+          <h2 className="section-title">Our Latest Projects</h2>
+          <p className="section-desc">
+            Kami telah berkolaborasi dengan berbagai brand, menghadirkan solusi
+            digital yang memperkuat identitas dan memperluas jangkauan mereka.
+          </p>
+        </section>
+        <section className="section5">
+          <div className="section5-container">
+            <div className="card-grid">
+              {cards.length > 0 ? (
+                cards.slice(0, 3).map((card) => <ProjectCard key={card.id} data={card} />)
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

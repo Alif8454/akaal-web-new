@@ -8,7 +8,7 @@ export default function ProjectCard({ data }) {
       <div className="project-card">
         <div className="card-image-container">
           <Image
-            src={data.image_url}
+            src={data.image_1}
             width={632}
             height={400}
             alt={data.client_name}
@@ -18,7 +18,7 @@ export default function ProjectCard({ data }) {
           <div className="card-content">
             <div className="content-left">
               <p className="client-name">{data.client_name || "PT. XYZ"}</p>
-              <p className="service-type">{data.service || "Social Media and Branding"}</p>
+              <p className="service-type">{data.judul || "Social Media and Branding"}</p>
             </div>
             <div className="content-right">
               <div className="agency-wrapper">

@@ -69,8 +69,8 @@ export default function Showcase() {
 
     const fetchCards = async () => {
       const { data, error } = await supabase
-        .from("client_cards")
-        .select("id, image_url, client_name, location");
+        .from("portofolio")
+        .select("id, image_1, client_name, judul, slug");
 
       if (error) {
         console.error("Fetch error:", error);
@@ -84,30 +84,30 @@ export default function Showcase() {
   }, []);
   return (
     <>
-      <div class="showcase-container">
-        <div class="showcase-title">
-          <div class="showcase-left">
-            <div class="AKAAL-agency">
-              AKAAL
-              <br />
-              Agency
-            </div>
+      <div className="showcase-container">
+        <div className="showcase-title">
+            <div className="showcase-left">
+              <div className="AKAAL-agency">
+                AKAAL
+                <br />
+                Agency
+              </div>
 
-            <div class="rectangle"></div>
+              <div className="rectangle"></div>
 
-            <div class="showcase-info">
-              <div class="client-name">PT. XYZ</div>
-              <div class="service-type">Social Media and Branding</div>
+              <div className="showcase-info">
+                <div className="client-name">PT. XYZ</div>
+                <div className="service-type">Social Media and Branding</div>
+              </div>
             </div>
-          </div>
 
           <Link href="/showcase" class="showcase-button">
-            <div class="button-text">Showcase</div>
+            <div className="button-text">Showcase</div>
           </Link>
         </div>
 
-        <div class="showcase-subtitle">
-          <p class="description">
+        <div className="showcase-subtitle">
+          <p className="description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -134,7 +134,13 @@ export default function Showcase() {
         <section className="section-home-contact">
           <div className="home-contact-container">
             <div className="home-contact-text-container">
-              <div className="home-contact-title">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  flexWrap: "nowrap",
+                }}
+              >
                 <div className="home-contact-journey">
                   Start Your Journey With
                 </div>
@@ -156,7 +162,7 @@ export default function Showcase() {
                     <span className="home-contact-icon">
                       <Icon path={mdiWhatsapp} size={1.2} />
                     </span>
-                    <span className="home-contact-text">+62 812 1395 7471</span>
+                    <span className="home-contact-text">+6281213957471</span>
                   </a>
                   <a
                     href="mailto:asiakaryalumina@gmail.com"
@@ -180,6 +186,7 @@ export default function Showcase() {
                 fill
                 priority
                 className="home-contact-logo"
+                style={{ marginTop: "-110px" }}
               />
             </div>
 
@@ -188,7 +195,7 @@ export default function Showcase() {
             </div>
             <div className="card-grid">
               {cards.length > 0 ? (
-                cards.map((card) => <ProjectCard key={card.id} data={card} />)
+                cards.slice(0, 3).map((card) => <ProjectCard key={card.id} data={card} />)
               ) : (
                 <p>Loading...</p>
               )}
