@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Loader from '../../components/Loader';
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -58,16 +59,22 @@ import {
 } from "react-icons/fa";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      initCarousel();
-      addHoverEffect();
-    }
+    // Simulasi loading dengan timeout
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Sesuaikan waktu loading sesuai kebutuhan
 
-    const fetchCards = async () => {
+    const fetchData = async () => {
+      if (typeof window !== "undefined") {
+        initCarousel();
+        addHoverEffect();
+      }
+
       const { data, error } = await supabase
         .from("client_cards")
         .select("id, image_url, client_name, location");
@@ -75,12 +82,13 @@ export default function Home() {
       if (error) {
         console.error("Fetch error:", error);
       } else {
-        console.log("Data dari Supabase:", data);
         setCards(data);
       }
     };
 
-    fetchCards();
+    fetchData();
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -90,6 +98,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      {isLoading && <Loader/>}
+      <div style={{ display: isLoading ? 'none' : 'block' }}>
       <section className="hero-section" id="home">
         <header className="hero-header">
           <div className="hero-content" id="carouselSlides">
@@ -156,6 +166,11 @@ export default function Home() {
               beresonansi dengan audiens Anda, dan mendorong pertumbuhan yang
               berkelanjutan.
             </p>
+            <button className="btn-idea">
+              <button className="idea-text-wrapper">
+                <div className="idea-text">Tell Us Your Idea</div>
+              </button>
+            </button>
           </div>
 
           {/* Right Side */}
@@ -587,6 +602,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }

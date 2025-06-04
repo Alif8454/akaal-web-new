@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Loader from "../../components/Loader";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -28,7 +29,7 @@ import { addHoverEffect } from "../../utils/hover";
 
 // 1. @mdi/react (Material Design Icons)
 import Icon from "@mdi/react";
-import { 
+import {
   mdiCheckCircleOutline,
   mdiAccountHeartOutline,
   mdiChartLine,
@@ -44,25 +45,21 @@ import {
 } from "@mdi/js";
 
 // 2. react-icons (Feather Icons)
-import { 
-  FiTrendingUp,
-  FiShield
-} from "react-icons/fi";
+import { FiTrendingUp, FiShield } from "react-icons/fi";
 
 // 3. react-icons (BoxIcons)
-import { 
-  BiSearchAlt2 
-} from "react-icons/bi";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 // 4. react-icons (Font Awesome)
-import { 
+import {
   FaPaintBrush,
   FaCameraRetro,
   FaBullhorn,
-  FaCheckCircle
+  FaCheckCircle,
 } from "react-icons/fa";
 
 export default function Service() {
+  const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
 
@@ -71,6 +68,9 @@ export default function Service() {
       initCarousel();
       addHoverEffect();
     }
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
 
     const fetchCards = async () => {
       const { data, error } = await supabase
@@ -86,228 +86,234 @@ export default function Service() {
     };
 
     fetchCards();
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <section className="hero-section" id="home">
-        <header className="hero-header">
-          <div className="hero-content" id="carouselSlides">
-            <div className="slide active">
-              <div className="about-content-image-wrapper">
-                <Image
-                  src="/img/service-content.png"
-                  alt="Deskripsi Gambar"
-                  fill
-                  style={{ objectFit: "contain" }}
-                />
+      {isLoading && <Loader />}
+      <div style={{ display: isLoading ? "none" : "block" }}>
+        <section className="hero-section" id="home">
+          <header className="hero-header">
+            <div className="hero-content" id="carouselSlides">
+              <div className="slide active">
+                <div className="about-content-image-wrapper">
+                  <Image
+                    src="/img/service-content.png"
+                    alt="Deskripsi Gambar"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
               </div>
             </div>
+          </header>
+          <div className="hero-navigation">
+            <Image
+              src="/img/Arrow-down.png"
+              alt="Arrow Down"
+              width={40}
+              height={40}
+              className="arrow-icon"
+              id="about"
+            />
           </div>
-        </header>
-        <div className="hero-navigation">
-          <Image
-            src="/img/Arrow-down.png"
-            alt="Arrow Down"
-            width={40}
-            height={40}
-            className="arrow-icon"
-            id="about"
-          />
-        </div>
-      </section>
-      <section className="section2">
-              <h2 className="section-title">
-                What We Do: <br></br> Creative. Strategic. Informative.
-              </h2>
-              <p className="section-desc">
-                Solusi digital menyeluruh yang dirancang untuk membentuk masa depan
-                bisnis Anda. Kami membaginya menjadi dua pilar utama: Akaal Digital
-                untuk transformasi <br></br>
-                teknologi, dan Akaal Agency untuk kekuatan strategi serta komunikasi
-                brand.
-              </p>
-
-               <div className="image-container">
-                  <Image
-                    src="/img/home-digi-container.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/home-digi2-container.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/home-digi3-container.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/OurServices_ AKAAL DIGITAL.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/OurServices2_ AKAAL DIGITAL.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/OurServices3_ AKAAL DIGITAL.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/img/OurServices4_ AKAAL DIGITAL.png"
-                    alt="AKAAL DIGITAL Services"
-                    width={1200}  // Sesuaikan dengan dimensi asli gambar
-                    height={600}  // Sesuaikan dengan dimensi asli gambar
-                    layout="responsive"
-                    className="responsive-image"
-                  />
-                </div>
-            </section>
-
-            <section className="section-home-contact">
-                    <div className="home-contact-container">
-                      <div className="home-contact-text-container">
-                        <div className="home-contact-title">
-                          <div className="home-contact-journey">
-                            Start Your Journey With
-                          </div>
-                          <div className="home-contact-akaal">AKAAL</div>
-                        </div>
-                        <div className="home-contact-description">
-                          Setiap bisnis punya tantangan dan tujuan unik—kami siap
-                          mendengarkan dan membantu Anda menemukan solusinya.
-                        </div>
-                        <div className="home-contact-action">
-                          
-            
-                          <div className="contact-row">
-                            <button className="home-contact-button">Tell Us Your Idea</button>  
-                            <a
-                              href="https://wa.me/6281213957471"
-                              className="home-contact-whatsapp"
-                            >
-                              <span className="home-contact-icon">
-                                <Icon path={mdiWhatsapp} size={1.2} />
-                              </span>
-                              <span className="home-contact-text">+62 812 1395 7471</span>
-                            </a>
-                            <a
-                              href="mailto:asiakaryalumina@gmail.com"
-                              className="home-contact-email"
-                            >
-                              <span className="home-contact-icon">
-                                <Icon path={mdiEmail} size={1} />
-                              </span>
-                              <span className="home-contact-text">
-                                asiakaryalumina@gmail.com
-                              </span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-            
-                      <div className="home-contact-logo-container">
-                        <Image
-                          src="/img/icon-white-big.png"
-                          alt="Akaal Logo"
-                          fill
-                          priority
-                          className="home-contact-logo"
-                        />
-                      </div>
-                    </div>
-                  </section>
-      <section className="section4">
-        <div className="content">
-          <Image
-            src="/img/AksessLogo.png"
-            alt="Aksess Logo"
-            width={144}
-            height={37}
-            class="logo"
-          />
-
-          <h2 className="heading">
-            The Ultimate Ticketing Solution for <br />
-            Seamless Events.
+        </section>
+        <section className="section2">
+          <h2 className="section-title">
+            What We Do: <br></br> Creative. Strategic. Informative.
           </h2>
-          <p className="subheading">
-            Kelola dan jual tiket event dengan lebih mudah, cepat, dan aman
-            dengan AKSESS—platform ticketing inovatif yang dirancang untuk
-            penyelenggara event modern.
+          <p className="section-desc">
+            Solusi digital menyeluruh yang dirancang untuk membentuk masa depan
+            bisnis Anda. Kami membaginya menjadi dua pilar utama: Akaal Digital
+            untuk transformasi <br></br>
+            teknologi, dan Akaal Agency untuk kekuatan strategi serta komunikasi
+            brand.
           </p>
 
-          <div className="features">
-            <div className="feature">
-              <Icon path={mdiTicketConfirmation} size={1} />
-              <div>
-                <h4>Pemesanan Tiket Mudah</h4>
-                <p>Sistem whitelabel dengan kategori tiket yang fleksibel</p>
+          <div className="image-container">
+            <Image
+              src="/img/home-digi-container.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/home-digi2-container.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/home-digi3-container.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/OurServices_ AKAAL DIGITAL.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/OurServices2_ AKAAL DIGITAL.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/OurServices3_ AKAAL DIGITAL.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+          <div className="image-container">
+            <Image
+              src="/img/OurServices4_ AKAAL DIGITAL.png"
+              alt="AKAAL DIGITAL Services"
+              width={1200} // Sesuaikan dengan dimensi asli gambar
+              height={600} // Sesuaikan dengan dimensi asli gambar
+              layout="responsive"
+              className="responsive-image"
+            />
+          </div>
+        </section>
+
+        <section className="section-home-contact">
+          <div className="home-contact-container">
+            <div className="home-contact-text-container">
+              <div className="home-contact-title">
+                <div className="home-contact-journey">
+                  Start Your Journey With
+                </div>
+                <div className="home-contact-akaal">AKAAL</div>
+              </div>
+              <div className="home-contact-description">
+                Setiap bisnis punya tantangan dan tujuan unik—kami siap
+                mendengarkan dan membantu Anda menemukan solusinya.
+              </div>
+              <div className="home-contact-action">
+                <div className="contact-row">
+                  <button className="home-contact-button">
+                    Tell Us Your Idea
+                  </button>
+                  <a
+                    href="https://wa.me/6281213957471"
+                    className="home-contact-whatsapp"
+                  >
+                    <span className="home-contact-icon">
+                      <Icon path={mdiWhatsapp} size={1.2} />
+                    </span>
+                    <span className="home-contact-text">+62 812 1395 7471</span>
+                  </a>
+                  <a
+                    href="mailto:asiakaryalumina@gmail.com"
+                    className="home-contact-email"
+                  >
+                    <span className="home-contact-icon">
+                      <Icon path={mdiEmail} size={1} />
+                    </span>
+                    <span className="home-contact-text">
+                      asiakaryalumina@gmail.com
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="feature">
-              <Icon path={mdiViewGridOutline} size={1} />
-              <div>
-                <h4>Dashboard Manajemen</h4>
-                <p>
-                  Pantau penjualan, pemesanan, dan check-in dalam satu tempat
-                </p>
-              </div>
+            <div className="home-contact-logo-container">
+              <Image
+                src="/img/icon-white-big.png"
+                alt="Akaal Logo"
+                fill
+                priority
+                className="home-contact-logo"
+              />
             </div>
+          </div>
+        </section>
+        <section className="section4">
+          <div className="content">
+            <Image
+              src="/img/AksessLogo.png"
+              alt="Aksess Logo"
+              width={144}
+              height={37}
+              class="logo"
+            />
 
-            <div className="feature">
-              <Icon path={mdiCreditCardOutline} size={1} />
-              <div>
-                <h4>Pembayaran Terintegrasi</h4>
-                <p>Dukungan berbagai metode pembayaran yang aman dan efisien</p>
+            <h2 className="heading">
+              The Ultimate Ticketing Solution for <br />
+              Seamless Events.
+            </h2>
+            <p className="subheading">
+              Kelola dan jual tiket event dengan lebih mudah, cepat, dan aman
+              dengan AKSESS—platform ticketing inovatif yang dirancang untuk
+              penyelenggara event modern.
+            </p>
+
+            <div className="features">
+              <div className="feature">
+                <Icon path={mdiTicketConfirmation} size={1} />
+                <div>
+                  <h4>Pemesanan Tiket Mudah</h4>
+                  <p>Sistem whitelabel dengan kategori tiket yang fleksibel</p>
+                </div>
+              </div>
+
+              <div className="feature">
+                <Icon path={mdiViewGridOutline} size={1} />
+                <div>
+                  <h4>Dashboard Manajemen</h4>
+                  <p>
+                    Pantau penjualan, pemesanan, dan check-in dalam satu tempat
+                  </p>
+                </div>
+              </div>
+
+              <div className="feature">
+                <Icon path={mdiCreditCardOutline} size={1} />
+                <div>
+                  <h4>Pembayaran Terintegrasi</h4>
+                  <p>
+                    Dukungan berbagai metode pembayaran yang aman dan efisien
+                  </p>
+                </div>
               </div>
             </div>
+            <div className="btn-aksess-wrapper">
+              <a href="#aksess" className="btn">
+                Jelajah AKSESS
+              </a>
+            </div>
           </div>
-          <div className="btn-aksess-wrapper">
-            <a href="#aksess" className="btn">
-              Jelajah AKSESS
-            </a>
-          </div>
-        </div>
-      </section>
-      
+        </section>
+      </div>
     </>
   );
 }
