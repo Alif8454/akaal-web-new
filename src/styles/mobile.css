@@ -401,22 +401,59 @@
 
 /* Responsive styles for 375px - 425px */
 /* CSS default untuk desktop */
-.home-digi-container {
-  display: flex;
-  flex-wrap: wrap; 
-  position: relative;
-}
-
-.service-card {
-  width: calc(50% - 20px); 
-  margin: 10px;
-  box-sizing: border-box;
-}
 
 /* Responsive untuk mobile (375px - 425px) */
 @media only screen and (max-width: 426px) {
+
+  .home-contact-container {
+    padding: 20px 15px;
+    flex-direction: column;
+  }
+
+  .home-contact-text-container {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .home-contact-journey,
+  .home-contact-akaal {
+    font-size: 1.5rem;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+
+  .home-contact-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 10px 0;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-contact-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .home-contact-whatsapp,
+  .home-contact-email {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-contact-logo-container {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+  }
   .home-digi-container {
-    flex-direction: column; 
+    flex-direction: column;
+    display: flex;
+  flex-wrap: wrap; 
+  position: relative;
   }
   
   .service-card {
@@ -469,3 +506,4 @@
     padding: 0 0.5rem;
   }
 }
+
