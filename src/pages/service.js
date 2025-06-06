@@ -207,7 +207,13 @@ export default function Service() {
         <section className="section-home-contact">
           <div className="home-contact-container">
             <div className="home-contact-text-container">
-              <div className="home-contact-title">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  flexWrap: "nowrap",
+                }}
+              >
                 <div className="home-contact-journey">
                   Start Your Journey With
                 </div>
@@ -229,7 +235,7 @@ export default function Service() {
                     <span className="home-contact-icon">
                       <Icon path={mdiWhatsapp} size={1.2} />
                     </span>
-                    <span className="home-contact-text">+62 812 1395 7471</span>
+                    <span className="home-contact-text">+6281213957471</span>
                   </a>
                   <a
                     href="mailto:asiakaryalumina@gmail.com"
@@ -253,6 +259,7 @@ export default function Service() {
                 fill
                 priority
                 className="home-contact-logo"
+                style={{ marginTop: "-110px" }}
               />
             </div>
           </div>

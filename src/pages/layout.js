@@ -8,6 +8,7 @@ import { addHoverEffect } from '../../utils/hover';
 import '../styles/style.css';
 import '../styles/mobile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AnimateOnScroll from '../../components/AnimateOnScroll';
 
 const Layout = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {isMobile ? <Mobile /> : <Navbar />}
+       <AnimateOnScroll />
       <main>{children}</main>
       <Footer />
     </>

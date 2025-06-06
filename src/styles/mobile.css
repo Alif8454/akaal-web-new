@@ -398,3 +398,74 @@
     padding: 0;
   }
 }
+
+/* Responsive styles for 375px - 425px */
+/* CSS default untuk desktop */
+.home-digi-container {
+  display: flex;
+  flex-wrap: wrap; 
+  position: relative;
+}
+
+.service-card {
+  width: calc(50% - 20px); 
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive untuk mobile (375px - 425px) */
+@media only screen and (max-width: 426px) {
+  .home-digi-container {
+    flex-direction: column; 
+  }
+  
+  .service-card {
+    width: 100% !important; 
+    margin: 10px 0 !important; 
+  }
+  
+  .home-digi-right {
+    display: none;
+  }
+  
+  .service-card h4 {
+    font-size: 1.2rem;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .donut-img,
+  .home-contact-logo,
+  .service-image{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .service-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .service-card p {
+    font-size: 0.85rem;
+  }
+   .home-contact-journey {
+    font-size: 1.3rem;
+  }
+  
+  .home-contact-akaal {
+    font-size: 1.8rem;
+  }
+  
+  .home-contact-description {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+}

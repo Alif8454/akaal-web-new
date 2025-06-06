@@ -12,6 +12,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
+import AnimateOnScroll from "../../components/AnimateOnScroll";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -64,26 +65,30 @@ export default function Home() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); 
+    let timer;
 
     const fetchData = async () => {
-      if (typeof window !== "undefined") {
-        initCarousel();
-        addHoverEffect();
-      }
+      try {
+        const { data } = await supabase
+          .from("portofolio")
+          .select("id, image_1, client_name, judul, slug");
 
-      const { data, error } = await supabase
-        .from("portofolio")
-        .select("id, image_1, client_name, judul, slug");
-
-      if (error) {
-        console.error("Fetch error:", error);
-      } else {
         setCards(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+        if (typeof window !== "undefined") {
+          initCarousel();
+          addHoverEffect();
+        }
       }
     };
+
+    // Fallback timeout jika fetch terlalu lama
+    timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
 
     fetchData();
 
@@ -148,7 +153,7 @@ export default function Home() {
 
         {/* Section 1 */}
         <section className="section1">
-          <div className="container-section1">
+          <div className="container-section1" data-animate="fadeIn">
             {/* Left Side */}
             <div className="left">
               <h1>
@@ -165,14 +170,14 @@ export default function Home() {
                 beresonansi dengan audiens Anda, dan mendorong pertumbuhan yang
                 berkelanjutan.
               </p>
-              <button className="btn-idea">
+              <button className="btn-idea" data-animate="fadeIn">
                 <span className="idea-text">Tell Us Your Idea</span>
               </button>
             </div>
 
             {/* Right Side */}
             <div className="right">
-              <div className="item">
+              <div className="item" data-animate="fadeInUp">
                 <div className="icon">
                   <Icon path={mdiCheckCircleOutline} size={1.2} />
                 </div>
@@ -185,7 +190,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item">
+              <div className="item" data-animate="fadeInUp">
                 <div className="icon">
                   <Icon path={mdiReload} size={1} />
                 </div>
@@ -198,7 +203,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item">
+              <div className="item" data-animate="fadeInUp">
                 <div className="icon">
                   <Icon path={mdiAccountHeartOutline} size={1.2} />
                 </div>
@@ -211,7 +216,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item">
+              <div className="item" data-animate="fadeInUp">
                 <div className="icon">
                   <Icon path={mdiChartLine} size={1.2} />
                 </div>
@@ -229,11 +234,11 @@ export default function Home() {
         {/* Section 1 End*/}
 
         {/* Section 2 */}
-        <section className="section2">
-          <h2 className="section-title">
+        <section className="section2" data-animate="fadeInUp">
+          <h2 className="section-title" data-animate="fadeInUp">
             What We Do: <br></br> Creative. Strategic. Informative.
           </h2>
-          <p className="section-desc">
+          <p className="section-desc" data-animate="fadeInUp">
             Solusi digital menyeluruh yang dirancang untuk membentuk masa depan
             bisnis Anda. Kami membaginya menjadi dua pilar utama: Akaal Digital
             untuk transformasi <br></br>
@@ -241,7 +246,7 @@ export default function Home() {
             brand.
           </p>
 
-          <div className="home-digi-container">
+          <div className="home-digi-container" data-animate="fadeInUp">
             <div className="home-digi-left">
               <Image
                 src="/img/icon-white.png"
@@ -269,7 +274,7 @@ export default function Home() {
                 height={410}
               />
             </div>
-            <div className="service-card">
+            <div className="service-card" data-animate="fadeInUp">
               <FiTrendingUp className="service-icon" size={35} />
               <h4>High-Conversion Landing Pages</h4>
               <p>
@@ -279,7 +284,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card">
+            <div className="service-card" data-animate="fadeInUp">
               <FiShield className="service-icon" size={35} />
               <h4>Website Maintenance</h4>
               <p>
@@ -289,7 +294,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card">
+            <div className="service-card" data-animate="fadeInUp">
               <FaCheckCircle className="service-icon" size={30} />
               <h4>Professional UI/UX Design</h4>
               <p>
@@ -299,7 +304,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card">
+            <div className="service-card" data-animate="fadeInUp">
               <BiSearchAlt2 className="service-icon" size={35} />
               <h4>SEO Optimization</h4>
               <p>
@@ -311,7 +316,11 @@ export default function Home() {
           </div>
         </section>
         <section className="section-home-agen">
-          <div className="home-agen-container">
+          <div
+            className="home-agen-container"
+            data-animate="fadeInUp"
+            data-animate-delay="200"
+          >
             {/* Top Section */}
             <div className="topSection">
               <div className="imageColumn">
@@ -323,7 +332,11 @@ export default function Home() {
                   height={598}
                 />
               </div>
-              <div className="textColumn">
+              <div
+                className="textColumn"
+                data-animate="fadeInUp"
+                data-animate-delay="200"
+              >
                 <Image
                   src="/img/icon-white.png"
                   alt="IconWhite"
@@ -331,9 +344,25 @@ export default function Home() {
                   width={48}
                   height={48}
                 />
-                <p className="serviceLabel">Our Services:</p>
-                <h2 className="agencyTitle">AKAAL CREATIVE AGENCY</h2>
-                <p className="agendesc">
+                <p
+                  className="serviceLabel"
+                  data-animate="fadeInUp"
+                  data-animate-delay="200"
+                >
+                  Our Services:
+                </p>
+                <h2
+                  className="agencyTitle"
+                  data-animate="fadeInUp"
+                  data-animate-delay="200"
+                >
+                  AKAAL CREATIVE AGENCY
+                </h2>
+                <p
+                  className="agendesc"
+                  data-animate="fadeInUp"
+                  data-animate-delay="200"
+                >
                   Solusi berbasis teknologi yang dirancang untuk memperkuat
                   fondasi digital bisnis Anda, mengoptimalkan operasional, dan
                   menciptakan pengalaman visual yang memikat.
@@ -342,7 +371,11 @@ export default function Home() {
             </div>
 
             {/* Card Section */}
-            <div className="agencardRow">
+            <div
+              className="agencardRow"
+              data-animate="fadeInUp"
+              data-animate-delay="200"
+            >
               <div className="agencard">
                 <FaPaintBrush className="icon" />
                 <h3 className="agencardTitle">Branding & Visual Identity</h3>
@@ -352,7 +385,11 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="agencard">
+              <div
+                className="agencard"
+                data-animate="fadeInUp"
+                data-animate-delay="200"
+              >
                 <FaCameraRetro className="icon" />
                 <h3 className="agencardTitle">Creative Content Production</h3>
                 <p className="agencardText">
@@ -361,7 +398,11 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="agencard">
+              <div
+                className="agencard"
+                data-animate="fadeInUp"
+                data-animate-delay="200"
+              >
                 <FaBullhorn className="icon" />
                 <h3 className="agencardTitle">Digital Marketing</h3>
                 <p className="agencardText">
@@ -428,7 +469,7 @@ export default function Home() {
                 fill
                 priority
                 className="home-contact-logo"
-                style={{ marginTop: '-110px' }}
+                style={{ marginTop: "-110px" }}
               />
             </div>
           </div>
@@ -443,12 +484,12 @@ export default function Home() {
 
         {/* Section 3 */}
         <section className="section3">
-          <div className="wrapper">
+          <div className="wrapper" data-animate="fadeInUp">
             <h2 className="judul">
               Be the <span className="highlight">Game Changer</span> with <br />
               <span className="highlight">One Stop</span> Digi-Solution.
             </h2>
-            <div className="visual">
+            <div className="visual" data-animate="fadeInUp">
               <Image
                 src="/img/light.png"
                 width={800}
@@ -456,7 +497,7 @@ export default function Home() {
                 alt="Digital Solution Illustration"
               />
             </div>
-            <p className="description">
+            <p className="description" data-animate="fadeInUp">
               Kami adalah mitra inovatif yang siap membawa bisnis Anda ke era
               digital dengan teknologi mutakhir. Berbasis di Jakarta, Akaal
               menghadirkan solusi terbaik dalam digital marketing, branding
@@ -465,7 +506,11 @@ export default function Home() {
               strategis, kami berkomitmen untuk mendorong kesuksesan digital
               Anda melalui keahlian, kreativitas, dan teknologi terbaru.
             </p>
-            <Link href="/about" className="btn btn-primary">
+            <Link
+              href="/about"
+              className="btn btn-primary"
+              data-animate="fadeInUp"
+            >
               About AKAAL
             </Link>
           </div>
@@ -473,7 +518,7 @@ export default function Home() {
 
         {/* Section 4 */}
         <section className="section4">
-          <div className="content">
+          <div className="content" data-animate="fadeInUp">
             <Image
               src="/img/AksessLogo.png"
               alt="Aksess Logo"
@@ -531,7 +576,7 @@ export default function Home() {
 
         {/* Section5 */}
         <section className="section5">
-          <div className="section5-container">
+          <div className="section5-container" data-animate="fadeInUp">
             <div className="section5-judul-desc">
               <p className="section5-left">
                 Kami telah berkolaborasi dengan berbagai brand, menghadirkan

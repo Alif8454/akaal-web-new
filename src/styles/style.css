@@ -1740,3 +1740,40 @@ body {
   background: linear-gradient(90deg, #7939cc 0%, #6543ec 100%);
   transform: translateY(-2px);
 }
+
+/* styles/animations.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-animate] {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+[data-animate-delay="100"] { animation-delay: 0.1s; }
+[data-animate-delay="200"] { animation-delay: 0.2s; }
