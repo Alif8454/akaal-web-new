@@ -3,8 +3,7 @@
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/style.css";
-import "../styles/mobile.css";
+
 
 // Component Imports
 import { useEffect, useState } from "react";
