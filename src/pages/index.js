@@ -177,7 +177,7 @@ export default function Home() {
 
             {/* Right Side */}
             <div className="right">
-              <div className="item" data-animate="fadeInUp">
+              <div className="item" >
                 <div className="icon">
                   <Icon path={mdiCheckCircleOutline} size={1.2} />
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" data-animate="fadeInUp">
+              <div className="item" >
                 <div className="icon">
                   <Icon path={mdiReload} size={1} />
                 </div>
@@ -203,7 +203,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" data-animate="fadeInUp">
+              <div className="item" >
                 <div className="icon">
                   <Icon path={mdiAccountHeartOutline} size={1.2} />
                 </div>
@@ -216,7 +216,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" data-animate="fadeInUp">
+              <div className="item" >
                 <div className="icon">
                   <Icon path={mdiChartLine} size={1.2} />
                 </div>
@@ -274,7 +274,7 @@ export default function Home() {
                 height={410}
               />
             </div>
-            <div className="service-card" data-animate="fadeInUp">
+            <div className="service-card">
               <FiTrendingUp className="service-icon" size={35} />
               <h4>High-Conversion Landing Pages</h4>
               <p>
@@ -284,7 +284,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card" data-animate="fadeInUp">
+            <div className="service-card">
               <FiShield className="service-icon" size={35} />
               <h4>Website Maintenance</h4>
               <p>
@@ -294,7 +294,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card" data-animate="fadeInUp">
+            <div className="service-card">
               <FaCheckCircle className="service-icon" size={30} />
               <h4>Professional UI/UX Design</h4>
               <p>
@@ -304,7 +304,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="service-card" data-animate="fadeInUp">
+            <div className="service-card">
               <BiSearchAlt2 className="service-icon" size={35} />
               <h4>SEO Optimization</h4>
               <p>
@@ -373,8 +373,6 @@ export default function Home() {
             {/* Card Section */}
             <div
               className="agencardRow"
-              data-animate="fadeInUp"
-              data-animate-delay="200"
             >
               <div className="agencard">
                 <FaPaintBrush className="icon" />
@@ -387,8 +385,7 @@ export default function Home() {
 
               <div
                 className="agencard"
-                data-animate="fadeInUp"
-                data-animate-delay="200"
+
               >
                 <FaCameraRetro className="icon" />
                 <h3 className="agencardTitle">Creative Content Production</h3>
@@ -400,8 +397,6 @@ export default function Home() {
 
               <div
                 className="agencard"
-                data-animate="fadeInUp"
-                data-animate-delay="200"
               >
                 <FaBullhorn className="icon" />
                 <h3 className="agencardTitle">Digital Marketing</h3>
