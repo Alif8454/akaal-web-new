@@ -77,8 +77,13 @@ export default function SlugPage() {
       </div>
 
       <div className="image-section">
-        {projectData.image_2 && (
+        {/* {projectData.image_1 && (
           <div className="image-wrapper">
+            <img className="img" alt="Project" src={projectData.image_1} />
+          </div>
+        )} */}
+        {projectData.image_2 && (
+          <div className="data-img-wrapper">
             <img className="img" alt="Project" src={projectData.image_2} />
           </div>
         )}
@@ -157,7 +162,7 @@ export default function SlugPage() {
           </div>
         </section>
         <section className="section-home-contact">
-          <Link href="/showcase" className="btn btn-primary">
+          <Link href="/porto-showcase" className="btn btn-primary">
             Back to Showcase
           </Link>
         </section>

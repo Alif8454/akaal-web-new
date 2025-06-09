@@ -12,6 +12,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
+import AnimateOnScroll from "../../components/AnimateOnScroll";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -119,7 +120,7 @@ export default function Showcase() {
             />
           </div>
         </section>
-        <section className="section2">
+        <section className="section2"  data-animate="fadeInUp">
           <h2 className="section-title">Our Latest Projects</h2>
           <p className="section-desc">
             Kami telah berkolaborasi dengan berbagai brand, menghadirkan solusi
@@ -127,10 +128,10 @@ export default function Showcase() {
           </p>
         </section>
         <section className="section5">
-          <div className="section5-container">
+          <div className="section5-container"  data-animate="fadeInUp">
             <div className="card-grid">
               {cards.length > 0 ? (
-                cards.slice(0, 3).map((card) => <ProjectCard key={card.id} data={card} />)
+                cards.map((card) => <ProjectCard key={card.id} data={card} />)
               ) : (
                 <p>Loading...</p>
               )}

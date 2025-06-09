@@ -12,6 +12,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
+import AnimateOnScroll from "../../components/AnimateOnScroll";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -120,7 +121,7 @@ export default function Service() {
             />
           </div>
         </section>
-        <section className="section2">
+        <section className="section2" data-animate="fadeInUp">
           <h2 className="section-title">
             What We Do: <br></br> Creative. Strategic. Informative.
           </h2>
@@ -204,67 +205,67 @@ export default function Service() {
           </div>
         </section>
 
-        <section className="section-home-contact">
-          <div className="home-contact-container">
-            <div className="home-contact-text-container">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  flexWrap: "nowrap",
-                }}
-              >
-                <div className="home-contact-journey">
-                  Start Your Journey With
-                </div>
-                <div className="home-contact-akaal">AKAAL</div>
-              </div>
-              <div className="home-contact-description">
-                Setiap bisnis punya tantangan dan tujuan unik—kami siap
-                mendengarkan dan membantu Anda menemukan solusinya.
-              </div>
-              <div className="home-contact-action">
-                <div className="contact-row">
-                  <button className="home-contact-button">
-                    Tell Us Your Idea
-                  </button>
-                  <a
-                    href="https://wa.me/6281213957471"
-                    className="home-contact-whatsapp"
-                  >
-                    <span className="home-contact-icon">
-                      <Icon path={mdiWhatsapp} size={1.2} />
-                    </span>
-                    <span className="home-contact-text">+6281213957471</span>
-                  </a>
-                  <a
-                    href="mailto:asiakaryalumina@gmail.com"
-                    className="home-contact-email"
-                  >
-                    <span className="home-contact-icon">
-                      <Icon path={mdiEmail} size={1} />
-                    </span>
-                    <span className="home-contact-text">
-                      asiakaryalumina@gmail.com
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="home-contact-logo-container">
-              <Image
-                src="/img/icon-white-big.png"
-                alt="Akaal Logo"
-                fill
-                priority
-                className="home-contact-logo"
-                style={{ marginTop: "-110px" }}
-              />
-            </div>
-          </div>
-        </section>
-        <section className="section4">
+        <section className="section-home-contact" data-animate="fadeInUp">
+                  <div className="home-contact-container" data-animate="fadeInUp">
+                    <div className="home-contact-text-container">
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          flexWrap: "nowrap",
+                        }}
+                      >
+                        <div className="home-contact-journey">
+                          Start Your Journey With
+                        </div>
+                        <div className="home-contact-akaal">AKAAL</div>
+                      </div>
+                      <div className="home-contact-description">
+                        Setiap bisnis punya tantangan dan tujuan unik—kami siap
+                        mendengarkan dan membantu Anda menemukan solusinya.
+                      </div>
+                      <div className="home-contact-action">
+                        <div className="contact-row">
+                          <button className="home-contact-button">
+                            Tell Us Your Idea
+                          </button>
+                          <a
+                            href="https://wa.me/6281213957471"
+                            className="home-contact-whatsapp"
+                          >
+                            <span className="home-contact-icon">
+                              <Icon path={mdiWhatsapp} size={1.2} />
+                            </span>
+                            <span className="home-contact-text">+6281213957471</span>
+                          </a>
+                          <a
+                            href="mailto:asiakaryalumina@gmail.com"
+                            className="home-contact-email"
+                          >
+                            <span className="home-contact-icon">
+                              <Icon path={mdiEmail} size={1} />
+                            </span>
+                            <span className="home-contact-text">
+                              asiakaryalumina@gmail.com
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <div className="home-contact-logo-container">
+                      <Image
+                        src="/img/icon-white-big.png"
+                        alt="Akaal Logo"
+                        fill
+                        priority
+                        className="home-contact-logo"
+                        style={{ marginTop: "-110px" }}
+                      />
+                    </div>
+                  </div>
+                </section>
+        <section className="section4" data-animate="fadeInUp">
           <div className="content">
             <Image
               src="/img/AksessLogo.png"
@@ -313,7 +314,7 @@ export default function Service() {
                 </div>
               </div>
             </div>
-            <div className="btn-aksess-wrapper">
+            <div className="btn-aksess-wrapper" data-animate="fadeInUp">
               <a href="#aksess" className="btn">
                 Jelajah AKSESS
               </a>

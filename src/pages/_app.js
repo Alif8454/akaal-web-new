@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react';
 import Layout from './layout';
 import { addHoverEffect } from '../../utils/hover';
-import '../styles/style.css';
-import '../styles/mobile.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/style.css'; 
+import '../styles/mobile.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const AppContext = createContext();
 

@@ -1,37 +1,50 @@
-// components/AnimateOnScroll.jsx
 "use client";
 
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const AnimateOnScroll = () => {
-  useEffect(() => {
-    // Check if we're on the client side
-    if (typeof window !== 'undefined') {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const element = entry.target;
-            const animationType = element.dataset.animate;
-            const delay = element.dataset.animateDelay || '0';
-            
-            // Apply animation with delay
-            setTimeout(() => {
-              element.classList.add(`animate-${animationType}`);
-              observer.unobserve(element);
-            }, parseInt(delay));
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+  const router = useRouter();
+
+  const runObserver = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const animationType = element.dataset.animate;
+          const delay = element.dataset.animateDelay || '0';
+
+          setTimeout(() => {
+            element.classList.add(`animate-${animationType}`);
+            observer.unobserve(element);
+          }, parseInt(delay));
+        }
       });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-      const animatedElements = document.querySelectorAll('[data-animate]');
-      animatedElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    animatedElements.forEach(el => observer.observe(el));
+  };
 
-      return () => observer.disconnect();
-    }
-  }, []);
+  useEffect(() => {
+    // Jalankan pertama kali
+    runObserver();
+
+    // Jalankan kembali setiap kali route berubah
+    const handleRouteChange = () => {
+      // Delay agar elemen sudah muncul di DOM
+      setTimeout(runObserver, 100);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
 
   return null;
 };

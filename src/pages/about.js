@@ -12,6 +12,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
+import AnimateOnScroll from "../../components/AnimateOnScroll";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
@@ -104,7 +105,7 @@ export default function About() {
 
         {/* About AKAAL Section */}
         <section className="about-akaal-section" id="about">
-          <div className="text-container">
+          <div className="text-container" data-animate="fadeIn">
             <div className="left-text">
               <h5>About AKAAL</h5>
               <h2>
@@ -126,7 +127,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="image-wrapper">
+          <div className="image-wrapper" data-animate="fadeIn">
             <Image
               src="/img/light-2.png"
               alt="About Illustration"
@@ -140,7 +141,7 @@ export default function About() {
 
           <div className="vismis">
             {/* Vision */}
-            <div className="vision-mission-container">
+            <div className="vision-mission-container" data-animate="fadeIn">
               <div className="mission-header">
                 <h2>Vision</h2>
                 <p>
@@ -151,7 +152,7 @@ export default function About() {
             </div>
 
             {/* Mission */}
-            <div className="vision-mission-container">
+            <div className="vision-mission-container" data-animate="fadeIn">
               <div className="mission-section">
                 <div className="mission-header">
                   <h2>Mission</h2>
@@ -162,8 +163,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="mission-grid">
-                  <div className="mission-card">
+                <div className="mission-grid" >
+                  <div className="mission-card" data-animate="fadeInUp">
                     <h3>01</h3>
                     <h4>Menciptakan Solusi Digital Adaptif</h4>
                     <p>
@@ -171,7 +172,7 @@ export default function About() {
                       bisnis, industri, dan komunitas.
                     </p>
                   </div>
-                  <div className="mission-card">
+                  <div className="mission-card" data-animate="fadeInUp">
                     <h3>02</h3>
                     <h4>Membangun Kemitraan Jangka Panjang</h4>
                     <p>
@@ -179,7 +180,7 @@ export default function About() {
                       bisnis yang berkelanjutan.
                     </p>
                   </div>
-                  <div className="mission-card">
+                  <div className="mission-card" data-animate="fadeInUp">
                     <h3>03</h3>
                     <h4>Menjadi Mitra Strategis</h4>
                     <p>
@@ -187,7 +188,7 @@ export default function About() {
                       produktivitas dan daya saing bisnis.
                     </p>
                   </div>
-                  <div className="mission-card">
+                  <div className="mission-card" data-animate="fadeInUp">
                     <h3>04</h3>
                     <h4>Berinovasi untuk Dampak Sosial</h4>
                     <p>
@@ -195,7 +196,7 @@ export default function About() {
                       wirausaha dan mengatasi tantangan sosial.
                     </p>
                   </div>
-                  <div className="mission-card">
+                  <div className="mission-card" data-animate="fadeInUp">
                     <h3>05</h3>
                     <h4>Mengintegrasikan Penjualan & Pemasaran</h4>
                     <p>
@@ -203,14 +204,14 @@ export default function About() {
                       presisi untuk hasil yang lebih efektif.
                     </p>
                   </div>
-                  <div className="mission-image-card"></div>
+                  <div className="mission-image-card" data-animate="fadeInUp"></div>
                 </div>
               </div>
             </div>
           </div>
 
           <section className="about-akaal-section" id="about">
-            <div className="text-container">
+            <div className="text-container" data-animate="fadeInUp">
               <div className="left-text">
                 <h5>Why Choose AKAAL?</h5>
                 <h2>
@@ -232,7 +233,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="feature-highlight">
+            <div className="feature-highlight" data-animate="fadeInUp">
               <div className="feature-box">
                 <Icon path={mdiCheckCircleOutline} size={1.5} color="#fff" />
                 <div className="feature-text">
@@ -277,7 +278,7 @@ export default function About() {
         </section>
 
         <section className="about-akaal-section" id="about">
-          <div className="text-container">
+          <div className="text-container" data-animate="fadeInUp">
             <div className="left-text">
               <h5>How AKAAL Handle Your Brand</h5>
               <h2>
@@ -297,7 +298,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="akaalcardRow">
+          <div className="akaalcardRow" data-animate="fadeInUp">
             <div className="akaalcardItem">
               <div className="akaalcardImage">
                 <Image

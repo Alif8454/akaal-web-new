@@ -1777,3 +1777,16 @@ body {
 
 [data-animate-delay="100"] { animation-delay: 0.1s; }
 [data-animate-delay="200"] { animation-delay: 0.2s; }
+
+.data-img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.data-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
