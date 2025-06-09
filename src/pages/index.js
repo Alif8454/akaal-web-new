@@ -2,8 +2,8 @@
 
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "../styles/style.module.css";
-import "../styles/mobile.module.css";
+import "../styles/style.css";
+import "../styles/mobile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Component Imports

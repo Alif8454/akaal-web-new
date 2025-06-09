@@ -77,11 +77,6 @@ export default function SlugPage() {
       </div>
 
       <div className="image-section">
-        {/* {projectData.image_1 && (
-          <div className="image-wrapper">
-            <img className="img" alt="Project" src={projectData.image_1} />
-          </div>
-        )} */}
         {projectData.image_2 && (
           <div className="data-img-wrapper">
             <img className="img" alt="Project" src={projectData.image_2} />
