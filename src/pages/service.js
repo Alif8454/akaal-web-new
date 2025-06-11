@@ -110,6 +110,7 @@ export default function Service() {
             </div>
           </header>
           <div className="hero-navigation">
+            <a href="#solution">
             <Image
               src="/img/Arrow-down.png"
               alt="Arrow Down"
@@ -118,10 +119,11 @@ export default function Service() {
               className="arrow-icon"
               id="about"
             />
+            </a>
           </div>
         </section>
         <section className="section2" data-animate="fadeInUp">
-          <h2 className="section-title">
+          <h2 className="section-title" id="solution">
             What We Do: <br></br> Creative. Strategic. Informative.
           </h2>
           <p className="section-desc">

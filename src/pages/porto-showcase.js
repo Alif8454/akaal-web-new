@@ -108,6 +108,7 @@ export default function Showcase() {
             </div>
           </header>
           <div className="hero-navigation">
+            <a href="#card">
             <Image
               src="/img/Arrow-down.png"
               alt="Arrow Down"
@@ -116,10 +117,11 @@ export default function Showcase() {
               className="arrow-icon"
               id="about"
             />
+            </a>
           </div>
         </section>
         <section className="section2"  data-animate="fadeInUp">
-          <h2 className="section-title">Our Latest Projects</h2>
+          <h2 className="section-title" id="card">Our Latest Projects</h2>
           <p className="section-desc">
             Kami telah berkolaborasi dengan berbagai brand, menghadirkan solusi
             digital yang memperkuat identitas dan memperluas jangkauan mereka.
@@ -127,7 +129,7 @@ export default function Showcase() {
         </section>
         <section className="section5">
           <div className="section5-container"  data-animate="fadeInUp">
-            <div className="card-grid">
+            <div className="card-grid" >
               {cards.length > 0 ? (
                 cards.map((card) => <ProjectCard key={card.id} data={card} />)
               ) : (
