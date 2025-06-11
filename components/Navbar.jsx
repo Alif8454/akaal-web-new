@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* Tombol Contact di kanan */}
         <div className="contact-btn-container d-none d-lg-block">
-          <Link href="/contact" className="custom-button">Contact</Link>
+          <Link href="https://wa.me/6281213957471" className="custom-button">Contact</Link>
         </div>
       </div>
     </nav>

@@ -62,42 +62,60 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const [heroImages, setHeroImages] = useState([]); // Array to hold multiple hero images
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let timer;
 
     const fetchData = async () => {
       try {
-        const { data } = await supabase
+        // 1. Fetch portfolio data (as before)
+        const { data: portfolioData, error: portfolioError } = await supabase
           .from("portofolio")
           .select("id, image_1, client_name, judul, slug");
 
-        setCards(data);
-      } catch (error) {
-        console.error(error);
+        if (portfolioError) throw portfolioError;
+        setCards(portfolioData || []);
+
+        // 2. Fetch hero images (now fetching multiple)
+        const { data: heroData, error: heroError } = await supabase
+          .from("hero")
+          .select("img"); // Fetch all rows and only the 'img' column
+
+        if (heroError) throw heroError;
+
+        console.log("Hero data from Supabase:", heroData); // Debugging
+
+        if (heroData && heroData.length > 0) {
+          // Map the data to extract only the image URLs
+          const imageUrls = heroData.map((item) => item.img);
+          setHeroImages(imageUrls);
+        } else {
+          console.warn("No hero images found in database");
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err.message);
       } finally {
         setIsLoading(false);
         if (typeof window !== "undefined") {
-          initCarousel();
-          addHoverEffect();
+          initCarousel(); // Make sure this function is correctly implemented
+          addHoverEffect(); // Make sure this function is correctly implemented
         }
       }
     };
 
-    // Fallback timeout jika fetch terlalu lama
-    timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
+    timer = setTimeout(() => setIsLoading(false), 3000);
     fetchData();
-
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <Head>
-        <title>Akaal</title>
+        <title>Be The Game Changer With One Stop Digi-Solution</title>
+        <link rel="icon" href="img/icon-gradientbg-rgb.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -106,27 +124,22 @@ export default function Home() {
         <section className="hero-section" id="home">
           <header className="hero-header">
             <div className="hero-content" id="carouselSlides">
-              {/* Slide 1 */}
-              <div className="slide active">
-                <div className="hero-image-wrapper">
-                  <Image
-                    src="/img/LandingPage.png"
-                    alt="Deskripsi Gambar"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                  />
+              {/* Slides generated dynamically */}
+              {heroImages.map((imageUrl, index) => (
+                <div
+                  className={`slide ${index === 0 ? "active" : ""}`}
+                  key={index}
+                >
+                  <div className="hero-image-wrapper">
+                    <Image
+                      src={imageUrl}
+                      alt={`Hero Image ${index + 1}`}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center" }}
+                    />
+                  </div>
                 </div>
-              </div>
-
-              {/* Slide 2 */}
-              <div className="slide active">
-                <Image
-                  src="/img/image-2.png"
-                  alt="Deskripsi Gambar"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+              ))}
             </div>
           </header>
           <div className="hero-navigation">
@@ -148,6 +161,7 @@ export default function Home() {
             />
           </div>
         </section>
+
         {/* Landing Page End */}
 
         {/* Section 1 */}
@@ -169,14 +183,18 @@ export default function Home() {
                 beresonansi dengan audiens Anda, dan mendorong pertumbuhan yang
                 berkelanjutan.
               </p>
-              <button className="btn-idea" data-animate="fadeIn">
-                <span className="idea-text">Tell Us Your Idea</span>
-              </button>
+              <Link href="https://wa.me/6281213957471" legacyBehavior>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="btn-idea" data-animate="fadeIn">
+                    <span className="idea-text">Tell Us Your Idea</span>
+                  </button>
+                </a>
+              </Link>
             </div>
 
             {/* Right Side */}
             <div className="right">
-              <div className="item" >
+              <div className="item">
                 <div className="icon">
                   <Icon path={mdiCheckCircleOutline} size={1.2} />
                 </div>
@@ -189,7 +207,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" >
+              <div className="item">
                 <div className="icon">
                   <Icon path={mdiReload} size={1} />
                 </div>
@@ -202,7 +220,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" >
+              <div className="item">
                 <div className="icon">
                   <Icon path={mdiAccountHeartOutline} size={1.2} />
                 </div>
@@ -215,7 +233,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="item" >
+              <div className="item">
                 <div className="icon">
                   <Icon path={mdiChartLine} size={1.2} />
                 </div>
@@ -370,9 +388,7 @@ export default function Home() {
             </div>
 
             {/* Card Section */}
-            <div
-              className="agencardRow"
-            >
+            <div className="agencardRow">
               <div className="agencard">
                 <FaPaintBrush className="icon" />
                 <h3 className="agencardTitle">Branding & Visual Identity</h3>
@@ -382,10 +398,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div
-                className="agencard"
-
-              >
+              <div className="agencard">
                 <FaCameraRetro className="icon" />
                 <h3 className="agencardTitle">Creative Content Production</h3>
                 <p className="agencardText">
@@ -394,9 +407,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div
-                className="agencard"
-              >
+              <div className="agencard">
                 <FaBullhorn className="icon" />
                 <h3 className="agencardTitle">Digital Marketing</h3>
                 <p className="agencardText">
@@ -429,9 +440,17 @@ export default function Home() {
               </div>
               <div className="home-contact-action">
                 <div className="contact-row">
-                  <button className="home-contact-button">
-                    Tell Us Your Idea
-                  </button>
+                  <Link href="https://wa.me/6281213957471" legacyBehavior>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="home-contact-button-link"
+                    >
+                      <button className="home-contact-button">
+                        Tell Us Your Idea
+                      </button>
+                    </a>
+                  </Link>
                   <a
                     href="https://wa.me/6281213957471"
                     className="home-contact-whatsapp"
@@ -468,12 +487,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className="section-home-contact">
-          <Link href="/about" className="btn btn-primary">
+        <div className="home-contact-service-button">
+          <Link href="/service" className="btn btn-primary">
             Our Services
           </Link>
-        </section>
+        </div>
+
         {/* Section 2 */}
 
         {/* Section 3 */}

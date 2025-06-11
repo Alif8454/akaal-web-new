@@ -1,5 +1,5 @@
 .footer {
-  background-color: #040016;
+  background: var(--Color-Neutral-Aksess-Black, #150439);
   color: white;
   font: "Plus Jakarta Sans", "Inter";
   padding: 4rem 2rem;

@@ -91,6 +91,7 @@ export default function About() {
             </div>
           </header>
           <div className="hero-navigation">
+            <a href="#about">
             <Image
               src="/img/Arrow-down.png"
               alt="Arrow Down"
@@ -99,6 +100,7 @@ export default function About() {
               className="arrow-icon"
               id="about"
             />
+            </a>
           </div>
         </section>
 
@@ -276,7 +278,7 @@ export default function About() {
           </section>
         </section>
 
-        <section className="about-akaal-section" id="about">
+        <section className="brand-akaal-section" id="about">
           <div className="text-container" data-animate="fadeInUp">
             <div className="left-text">
               <h5>How AKAAL Handle Your Brand</h5>
