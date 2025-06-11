@@ -354,7 +354,7 @@ body {
   padding: 60px 30px;
   border-radius: 20px;
   max-width: 1296px;
-  height: 820px;
+  height: 638px;
   margin: 0 auto;
 }
 
@@ -373,7 +373,7 @@ body {
 }
 
 .donut-img {
-  transform: translate(-29px, -59px);
+  transform: translate(-55px, -59px);
 }
 
 .textColumn {
@@ -389,12 +389,12 @@ body {
 
 
 .iconwhite-img {
-  transform: translateY(-150px);
+  transform: translateY(-75px);
 }
 
 .agencyTitle,
 .serviceLabel {
-  transform: translateY(-132px) !important;
+  transform: translateY(-50px) !important;
   color: var(--Neutral-White, #feffff);
   text-align: right;
   font-size: 24px;
@@ -404,7 +404,7 @@ body {
 }
 
 .agendesc {
-  transform: translateY(-134px) !important;
+  transform: translateY(-45px) !important;
   font-size: 16px;
   line-height: 1.6;
   color: #e0e0e0;

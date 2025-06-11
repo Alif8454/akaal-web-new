@@ -345,8 +345,8 @@ export default function Home() {
                   src="/img/donut.png"
                   alt="Donut"
                   className="donut-img"
-                  width={634}
-                  height={598}
+                  width={549}
+                  height={420}
                 />
               </div>
               <div
@@ -492,6 +492,8 @@ export default function Home() {
             Our Services
           </Link>
         </div>
+
+
 
         {/* Section 2 */}
 
