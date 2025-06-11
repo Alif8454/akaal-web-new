@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
 import AnimateOnScroll from "../../components/AnimateOnScroll";
-
+import ResponsiveImage from "../../components/ResponsiveImage";
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
 
@@ -110,7 +110,7 @@ export default function Service() {
             </div>
           </header>
           <div className="hero-navigation">
-            <a href="#solution">
+            <a href="#about">
             <Image
               src="/img/Arrow-down.png"
               alt="Arrow Down"
@@ -135,75 +135,88 @@ export default function Service() {
           </p>
 
           <div className="image-container">
-            <Image
-              src="/img/home-digi-container.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/home-digi2-container.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/home-digi3-container.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/OurServices_ AKAAL DIGITAL.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/OurServices2_ AKAAL DIGITAL.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/OurServices3_ AKAAL DIGITAL.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
-          <div className="image-container">
-            <Image
-              src="/img/OurServices4_ AKAAL DIGITAL.png"
-              alt="AKAAL DIGITAL Services"
-              width={1200} // Sesuaikan dengan dimensi asli gambar
-              height={600} // Sesuaikan dengan dimensi asli gambar
-              layout="responsive"
-              className="responsive-image"
-            />
-          </div>
+    <ResponsiveImage
+      desktopSrc="/img/home-digi-container.png"
+      mobileSrc="/img/digi1.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/home-digi2-container.png"
+      mobileSrc="/img/digi2.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/home-digi3-container.png"
+      mobileSrc="/img/digi3.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/OurServices_ AKAAL DIGITAL.png"
+      mobileSrc="/img/digi4.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/OurServices2_ AKAAL DIGITAL.png"
+      mobileSrc="/img/digi5.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/OurServices3_ AKAAL DIGITAL.png"
+      mobileSrc="/img/digi6.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
+
+  <div className="image-container">
+    <ResponsiveImage
+      desktopSrc="/img/OurServices4_ AKAAL DIGITAL.png"
+      mobileSrc="/img/digi7.png"
+      alt="AKAAL DIGITAL Services"
+      width={1200}
+      height={600}
+      layout="responsive"
+      className="responsive-image"
+    />
+  </div>
         </section>
 
         <section className="section-home-contact" data-animate="fadeInUp">
