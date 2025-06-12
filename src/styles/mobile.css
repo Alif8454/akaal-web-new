@@ -398,9 +398,6 @@
   }
 }
 
-/* Responsive styles for 375px - 425px */
-/* CSS default untuk desktop */
-
 /* Responsive untuk mobile (375px - 425px) */
 @media only screen and (max-width: 426px) {
 
@@ -477,6 +474,14 @@
   .home-contact-logo,
   .service-image{
     display: none !important;
+  }
+
+  .home-agen-container {
+    height: 1020px;
+  }
+
+  .agencardRow{
+    margin: 97px 0 0 0;
   }
 }
 
