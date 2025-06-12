@@ -31,7 +31,7 @@ export default function Mobile() {
           <li><Link href="/about">About Akaal</Link></li>
           <li><Link href="/service">Our Services</Link></li>
           <li><Link href="/porto-showcase">Showcase</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          <li><Link href="https://wa.me/6281213957471">Contact</Link></li>
         </ul>
       )}
     </nav>

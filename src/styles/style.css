@@ -862,10 +862,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 24px;
+  padding: 16px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   z-index: 2;
 }
 
@@ -902,6 +902,10 @@ body {
   z-index: 1;
 }
 .content-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
   flex: 1;
 }
 .content-right {
@@ -933,8 +937,6 @@ body {
   background-color: #C084FC;
 }
 .agency-wrapper {
-  margin-top: 16px;
-  padding-top: 16px;
   position: relative;
 }
 
@@ -946,8 +948,12 @@ body {
   margin: 0;
   line-height: 1.2;
   position: relative;
-  padding-top: 16px;
 }
+.agency-name, .agency-wrapper {
+    padding-top: 6px;
+    position: relative;
+}
+
 .project-card-link {
   text-decoration: none;
   display: block;
