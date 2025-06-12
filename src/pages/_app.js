@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import Layout from './layout';
-import { addHoverEffect } from '../../utils/hover';
+// import { addHoverEffect } from '../../utils/hover';
 import "../styles/navbar.css";
 import "../styles/footer.css";
 import "../styles/style.css";

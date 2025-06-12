@@ -23,7 +23,6 @@ import ProjectCard from "../../components/ProjectCard";
 
 // Utility Functions
 import { initCarousel } from "../../utils/carousel";
-import { addHoverEffect } from "../../utils/hover";
 
 // Icon Imports grouped by library
 
@@ -60,7 +59,6 @@ export default function About() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    addHoverEffect();
 
     const timer = setTimeout(() => {
       setIsLoading(false);

@@ -14,17 +14,20 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  position: relative !important;
 }
 
-.navbar-nav .underline {
+/* .navbar-nav .underline {
   position: absolute;
-  bottom: -20;
+  bottom: 0; 
   height: 2px;
-  background-color: #9747ff;
-  transition: left 0.3s ease, width 0.3s ease;
+  background-color: #9747ff !important;
+  transition: left 0.3s ease, width 0.3s ease, opacity 0.3s ease;
   pointer-events: none;
   width: 0;
-}
+  opacity: 0;
+} */
+
 
 .nav-link {
   color: white !important;
@@ -36,8 +39,23 @@
   position: relative;
 }
 
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #9747ff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-link:hover {
-  color: #6a11cb !important; /* Purple color on hover */
+  color: #6a11cb !important;
 }
 
 /* contact-btn */

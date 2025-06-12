@@ -1,7 +1,7 @@
 export function addHoverEffect() {
-  if (typeof window === 'undefined') return;
+  if (typeof window === "undefined") return;
 
-  window.addEventListener("load", function () {
+  window.addEventListener("load", () => {
     const nav = document.querySelector(".navbar-nav");
     if (!nav) return;
 
@@ -9,23 +9,23 @@ export function addHoverEffect() {
     const underline = document.createElement("div");
     underline.className = "underline";
 
+    // Append underline
     nav.appendChild(underline);
 
-    links.forEach(link => {
-      link.addEventListener("mouseenter", function () {
-        const linkRect = link.getBoundingClientRect();
-        const navRect = nav.getBoundingClientRect();
+    links.forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        const linkOffsetLeft = link.offsetLeft;
+        const linkWidth = link.offsetWidth;
 
-        const left = linkRect.left - navRect.left;
-        const width = linkRect.width;
-
-        underline.style.left = `${left}px`;
-        underline.style.width = `${width}px`;
+        underline.style.left = `${linkOffsetLeft}px`;
+        underline.style.width = `${linkWidth}px`;
+        underline.style.opacity = "1";
       });
     });
 
-    nav.addEventListener("mouseleave", function () {
+    nav.addEventListener("mouseleave", () => {
       underline.style.width = "0";
+      underline.style.opacity = "0";
     });
   });
 }

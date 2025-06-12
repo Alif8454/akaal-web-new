@@ -23,7 +23,7 @@ import ProjectCard from "../../components/ProjectCard";
 
 // Utility Functions
 import { initCarousel } from "../../utils/carousel";
-import { addHoverEffect } from "../../utils/hover";
+// import { addHoverEffect } from "../../utils/hover";
 
 // Icon Imports grouped by library
 
@@ -101,7 +101,7 @@ export default function Home() {
         setIsLoading(false);
         if (typeof window !== "undefined") {
           initCarousel(); // Make sure this function is correctly implemented
-          addHoverEffect(); // Make sure this function is correctly implemented
+
         }
       }
     };

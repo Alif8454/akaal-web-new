@@ -23,7 +23,6 @@ import ProjectCard from "../../components/ProjectCard";
 
 // Utility Functions
 import { initCarousel } from "../../utils/carousel";
-import { addHoverEffect } from "../../utils/hover";
 
 // Icon Imports grouped by library
 
@@ -66,7 +65,6 @@ export default function Service() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       initCarousel();
-      addHoverEffect();
     }
     const timer = setTimeout(() => {
       setIsLoading(false);
