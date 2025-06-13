@@ -444,11 +444,15 @@
   }
 
   .home-agen-container {
-    height: 1020px;
+    height: 1350px;
   }
 
   .agencardRow {
-    margin: 97px 0 0 0;
+    margin: 70px 0 0 0;
+  }
+
+  .textColumn {
+    transform: translateY(-10px) !important;
   }
 
   .data-img-wrapper {
