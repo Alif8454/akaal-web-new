@@ -23,7 +23,6 @@ import ProjectCard from "../../components/ProjectCard";
 
 // Utility Functions
 import { initCarousel } from "../../utils/carousel";
-// import { addHoverEffect } from "../../utils/hover";
 
 // Icon Imports grouped by library
 
@@ -62,7 +61,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
-  const [heroImages, setHeroImages] = useState([]); // Array to hold multiple hero images
+  const [heroImages, setHeroImages] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export default function Home() {
 
     const fetchData = async () => {
       try {
-        // 1. Fetch portfolio data (as before)
+        // 1. Fetch portfolio data
         const { data: portfolioData, error: portfolioError } = await supabase
           .from("portofolio")
           .select("id, image_1, client_name, judul, slug");
@@ -78,17 +77,14 @@ export default function Home() {
         if (portfolioError) throw portfolioError;
         setCards(portfolioData || []);
 
-        // 2. Fetch hero images (now fetching multiple)
+        // 2. Fetch hero images
         const { data: heroData, error: heroError } = await supabase
           .from("hero")
-          .select("img"); // Fetch all rows and only the 'img' column
+          .select("img");
 
         if (heroError) throw heroError;
 
-        console.log("Hero data from Supabase:", heroData); // Debugging
-
         if (heroData && heroData.length > 0) {
-          // Map the data to extract only the image URLs
           const imageUrls = heroData.map((item) => item.img);
           setHeroImages(imageUrls);
         } else {
@@ -99,10 +95,6 @@ export default function Home() {
         setError(err.message);
       } finally {
         setIsLoading(false);
-        if (typeof window !== "undefined") {
-          initCarousel(); // Make sure this function is correctly implemented
-
-        }
       }
     };
 
@@ -110,6 +102,23 @@ export default function Home() {
     fetchData();
     return () => clearTimeout(timer);
   }, []);
+
+  // Initialize carousel after images are loaded and rendered
+  useEffect(() => {
+    if (heroImages.length > 0 && !isLoading) {
+      // Small delay to ensure DOM is fully rendered
+      const timer = setTimeout(() => {
+        try {
+          initCarousel();
+        } catch (err) {
+          console.error("Carousel initialization error:", err);
+        }
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [heroImages, isLoading]);
+
 
   return (
     <>
