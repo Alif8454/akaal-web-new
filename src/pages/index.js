@@ -599,7 +599,7 @@ export default function Home() {
         </section>
 
         {/* Section5 */}
-        <section className="section5">
+        {/* <section className="section5">
           <div className="section5-container" data-animate="fadeInUp">
             <div className="section5-judul-desc">
               <p className="section5-left">
@@ -621,7 +621,6 @@ export default function Home() {
           </div>
 
           <div className="clients-section">
-            {/* garis */}
             <div className="title-wraper">
               <div className="title">
                 <h2 className="title-text">Clients and Partners</h2>
@@ -676,7 +675,7 @@ export default function Home() {
               <button className="portfolio-button">Showcase</button>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );
