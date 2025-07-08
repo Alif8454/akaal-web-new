@@ -1,4 +1,5 @@
 "use client";
+import useClientSide from '/../../hooks/useClientSide'
 
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -58,35 +59,34 @@ import {
 } from "react-icons/fa";
 
 export default function Service() {
+  const isClient = useClientSide()
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      initCarousel();
-    }
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    const timer = setTimeout(() => setIsLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
 
+  useEffect(() => {
     const fetchCards = async () => {
       const { data, error } = await supabase
         .from("client_cards")
-        .select("id, image_url, client_name, location");
+        .select("id, image_url, client_name, location")
+      
+      if (!error) setCards(data)
+    }
 
-      if (error) {
-        console.error("Fetch error:", error);
-      } else {
-        console.log("Data dari Supabase:", data);
-        setCards(data);
-      }
-    };
+    fetchCards()
+  }, [])
 
-    fetchCards();
-
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => {
+    if (isClient) {
+      initCarousel()
+      return () => cleanupCarousel()
+    }
+  }, [isClient])
 
   return (
     <>

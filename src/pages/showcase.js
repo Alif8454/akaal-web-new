@@ -1,4 +1,5 @@
 "use client";
+import useClientSide from '/../../hooks/useClientSide'
 
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -58,27 +59,30 @@ import {
 export default function Showcase() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const isClient = useClientSide()
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      initCarousel();
-    }
+    // if (typeof window !== "undefined") {
+    //   initCarousel();
+    // }
 
-    const fetchCards = async () => {
+     const fetchCards = async () => {
       const { data, error } = await supabase
         .from("portofolio")
-        .select("id, image_1, client_name, judul, slug");
+        .select("id, image_1, client_name, judul, slug")
+      
+      if (!error) setCards(data)
+    }
 
-      if (error) {
-        console.error("Fetch error:", error);
-      } else {
-        console.log("Data dari Supabase:", data);
-        setCards(data);
-      }
-    };
+    fetchCards()
+  }, [])
 
-    fetchCards();
-  }, []);
+  useEffect(() => {
+    if (isClient) {
+      initCarousel()
+      return () => cleanupCarousel() 
+    }
+  }, [isClient]);
   return (
     <>
       <div className="showcase-container">
