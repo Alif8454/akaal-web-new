@@ -1,5 +1,5 @@
 "use client";
-import useClientSide from '/../../hooks/useClientSide'
+import useClientSide from '@/hooks/useClientSide'
 
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
