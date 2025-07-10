@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="container-fluid d-flex justify-content-between align-items-center">
         
         {/* Logo di kiri */}
-        <Link href="/" className="navbar-brand text-white">
+        <Link href="/" className="navbar-brand text-white" legacyBehavior>
           <Image
             src="/img/logo-fullcolor-negative-rgb.png"
             alt="Logo Akaal"

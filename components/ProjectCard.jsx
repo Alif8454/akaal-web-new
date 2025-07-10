@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function ProjectCard({ data }) {
   return (
-    <Link href={`/articles/${data.slug}`} className="project-card-link">
+    <Link
+      href={`/articles/${data.slug}`}
+      className="project-card-link"
+      legacyBehavior>
       <div className="project-card">
         <div className="card-image-container">
           <Image

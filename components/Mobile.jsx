@@ -10,7 +10,7 @@ export default function Mobile() {
   return (
     <nav className="mobile-navbar">
       <div className="mobile-container">
-        <Link href="/" className="logo">
+        <Link href="/" className="logo" legacyBehavior>
           <Image
             src="/img/logo-fullcolor-negative-rgb.png"
             alt="Logo Akaal"
@@ -24,13 +24,12 @@ export default function Mobile() {
           <FaBars size={24} />
         </button>
       </div>
-
       {isOpen && (
         <ul className="mobile-menu">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About Akaal</Link></li>
           <li><Link href="/service">Our Services</Link></li>
-          <li><Link href="/porto-showcase">Showcase</Link></li>
+          {/* <li><Link href="/porto-showcase">Showcase</Link></li> */}
           <li><Link href="https://wa.me/6281213957471">Contact</Link></li>
         </ul>
       )}

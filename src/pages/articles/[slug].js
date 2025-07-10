@@ -66,7 +66,7 @@ export default function SlugPage() {
             </div>
           </div>
 
-          <Link href="/showcase" className="showcase-button">
+          <Link href="/showcase" className="showcase-button" legacyBehavior>
             <div className="button-text">Showcase</div>
           </Link>
         </div>
@@ -75,7 +75,6 @@ export default function SlugPage() {
           <p className="description">{projectData.description}</p>
         </div>
       </div>
-
       <div className="image-section">
         {projectData.image_2 && (
           <div className="data-img-wrapper">
