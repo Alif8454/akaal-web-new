@@ -1,15 +1,22 @@
 import { createContext, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from './layout';
-// import { addHoverEffect } from '../../utils/hover';
 import "../styles/navbar.css";
 import "../styles/footer.css";
 import "../styles/style.css";
 import "../styles/mobile.css";
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AppContext = createContext();
 
-export default function App({ Component, pageProps }) {
+// TypeScript alternative (uncomment if using TypeScript)
+// interface AppProps {
+//   Component: React.ComponentType;
+//   pageProps: any;
+// }
+
+function App({ Component, pageProps }) {
   const [user, setUser] = useState(null);
 
   return (
@@ -21,4 +28,16 @@ export default function App({ Component, pageProps }) {
   );
 }
 
+// PropTypes validation
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object,
+};
+
+// Default props
+App.defaultProps = {
+  pageProps: {},
+};
+
 export { AppContext };
+export default App;

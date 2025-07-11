@@ -1,13 +1,14 @@
 // components/ProjectCard.jsx
 import Image from "next/image";
 import Link from "next/link";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ProjectCard({ data }) {
   return (
     <Link
       href={`/articles/${data.slug}`}
-      className="project-card-link"
-      legacyBehavior>
+      className="project-card-link">
       <div className="project-card">
         <div className="card-image-container">
           <Image
@@ -36,3 +37,21 @@ export default function ProjectCard({ data }) {
     </Link>
   );
 }
+
+// PropTypes validation
+ProjectCard.propTypes = {
+  data: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    image_1: PropTypes.string.isRequired,
+    client_name: PropTypes.string,
+    judul: PropTypes.string
+  }).isRequired
+};
+
+// Default props
+ProjectCard.defaultProps = {
+  data: {
+    client_name: "PT. XYZ",
+    judul: "Social Media and Branding"
+  }
+};
