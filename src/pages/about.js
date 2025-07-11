@@ -1,59 +1,38 @@
 "use client";
 
+import React from 'react';
+import { useEffect, useState } from "react";
+
 // CSS Imports
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 // Component Imports
-import { useEffect, useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import Loader from "../../components/Loader";
-import AnimateOnScroll from "../../components/AnimateOnScroll";
 
-// Supabase Client
-import { supabase } from "../config/supabaseClient";
-
-// Custom Components
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import ProjectCard from "../../components/ProjectCard";
-
-// Utility Functions
-import { initCarousel } from "../../utils/carousel";
-
-// Icon Imports grouped by library
-
-// 1. @mdi/react (Material Design Icons)
+// Icon Imports
 import Icon from "@mdi/react";
 import {
   mdiCheckCircleOutline,
   mdiAccountHeartOutline,
   mdiChartLine,
   mdiReload,
-  mdiTicketConfirmation,
-  mdiViewGridOutline,
-  mdiCreditCardOutline,
-  mdiChevronRight,
-  mdiMenu,
-  mdiClose,
 } from "@mdi/js";
 
-// 2. react-icons (Feather Icons)
-import { FiTrendingUp, FiShield } from "react-icons/fi";
+import Loader from "../../components/Loader";
 
-// 3. react-icons (BoxIcons)
-import { BiSearchAlt2 } from "react-icons/bi";
+// import { FiTrendingUp, FiShield } from "react-icons/fi";
 
-// 4. react-icons (Font Awesome)
-import {
-  FaPaintBrush,
-  FaCameraRetro,
-  FaBullhorn,
-  FaCheckCircle,
-} from "react-icons/fa";
+
+// import { BiSearchAlt2 } from "react-icons/bi";
+
+
+// import {
+//   FaPaintBrush,
+//   FaCameraRetro,
+//   FaBullhorn,
+//   FaCheckCircle,
+// } from "react-icons/fa";
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);

@@ -10,12 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AppContext = createContext();
 
-// TypeScript alternative (uncomment if using TypeScript)
-// interface AppProps {
-//   Component: React.ComponentType;
-//   pageProps: any;
-// }
-
 function App({ Component, pageProps }) {
   const [user, setUser] = useState(null);
 

@@ -1,32 +1,16 @@
 "use client";
 
-// CSS Imports
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-// Component Imports
+import React from 'react';
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "../../components/Loader";
-import AnimateOnScroll from "../../components/AnimateOnScroll";
 
 // Supabase Client
 import { supabase } from "../config/supabaseClient";
 
-// Custom Components
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import ProjectCard from "../../components/ProjectCard";
-
-// Utility Functions
-import { initCarousel } from "../../utils/carousel";
-
-// Icon Imports grouped by library
-
-// 1. @mdi/react (Material Design Icons)
+// Icon Imports
 import Icon from "@mdi/react";
 import {
   mdiCheckCircleOutline,
@@ -36,20 +20,12 @@ import {
   mdiTicketConfirmation,
   mdiViewGridOutline,
   mdiCreditCardOutline,
-  mdiChevronRight,
-  mdiMenu,
-  mdiClose,
   mdiWhatsapp,
   mdiEmail,
 } from "@mdi/js";
 
-// 2. react-icons (Feather Icons)
 import { FiTrendingUp, FiShield } from "react-icons/fi";
-
-// 3. react-icons (BoxIcons)
 import { BiSearchAlt2 } from "react-icons/bi";
-
-// 4. react-icons (Font Awesome)
 import {
   FaPaintBrush,
   FaCameraRetro,
@@ -57,27 +33,20 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
+// CSS Imports
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cards, setCards] = useState([]);
   const [heroImages, setHeroImages] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     let timer;
 
     const fetchData = async () => {
       try {
-        // 1. Fetch portfolio data
-        const { data: portfolioData, error: portfolioError } = await supabase
-          .from("portofolio")
-          .select("id, image_1, client_name, judul, slug");
-
-        if (portfolioError) throw portfolioError;
-        setCards(portfolioData || []);
-
-        // 2. Fetch hero images
+        // Only fetch hero images since we're not using portfolio data
         const { data: heroData, error: heroError } = await supabase
           .from("hero")
           .select("img");
@@ -92,7 +61,6 @@ export default function Home() {
         }
       } catch (err) {
         console.error("Error fetching data:", err);
-        setError(err.message);
       } finally {
         setIsLoading(false);
       }
@@ -102,22 +70,6 @@ export default function Home() {
     fetchData();
     return () => clearTimeout(timer);
   }, []);
-
-  // Initialize carousel after images are loaded and rendered
-  useEffect(() => {
-    if (heroImages.length > 0 && !isLoading) {
-      // Small delay to ensure DOM is fully rendered
-      const timer = setTimeout(() => {
-        try {
-          initCarousel();
-        } catch (err) {
-          console.error("Carousel initialization error:", err);
-        }
-      }, 100);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [heroImages, isLoading]);
 
 
   return (
@@ -597,85 +549,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Section5 */}
-        {/* <section className="section5">
-          <div className="section5-container" data-animate="fadeInUp">
-            <div className="section5-judul-desc">
-              <p className="section5-left">
-                Kami telah berkolaborasi dengan berbagai brand, menghadirkan
-                solusi digital yang memperkuat identitas dan memperluas
-                jangkauan mereka.
-              </p>
-              <h2 className="section5-right">
-                <span> Our Latest Projects.</span>
-              </h2>
-            </div>
-            <div className="card-grid">
-              {cards.length > 0 ? (
-                cards.map((card) => <ProjectCard key={card.id} data={card} />)
-              ) : (
-                <p>Loading...</p>
-              )}
-            </div>
-          </div>
-
-          <div className="clients-section">
-            <div className="title-wraper">
-              <div className="title">
-                <h2 className="title-text">Clients and Partners</h2>
-                <div className="title-line" />
-              </div>
-            </div>
-            <div className="clients-carousel">
-              <button className="carousel-arrow">&#8592;</button>
-
-              <div className="clients-logos">
-                <Image
-                  src="/img/hei.png"
-                  width={134}
-                  height={53}
-                  alt="Client 1"
-                />
-                <Image
-                  src="/img/bsi.png"
-                  width={134}
-                  height={53}
-                  alt="Client 2"
-                />
-                <Image
-                  src="/img/ikram.png"
-                  width={134}
-                  height={53}
-                  alt="Client 3"
-                />
-                <Image
-                  src="/img/hijrahfest.png"
-                  width={134}
-                  height={53}
-                  alt="Client 4"
-                />
-                <Image
-                  src="/img/laukstory.png"
-                  width={134}
-                  height={53}
-                  alt="Client 5"
-                />
-                <Image
-                  src="/img/ocula.png"
-                  alt="Client 6"
-                  width={134}
-                  height={53}
-                />
-              </div>
-              <button className="carousel-arrow">&#8594;</button>
-            </div>
-
-            <div className="portfolio-button-container">
-              <button className="portfolio-button">Showcase</button>
-            </div>
-          </div>
-        </section> */}
       </div>
     </>
   );

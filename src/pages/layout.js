@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 'use client';
+import React from 'react';
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Mobile from '../../components/Mobile';
