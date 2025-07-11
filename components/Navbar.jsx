@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
 import Icon from '@mdi/react';
@@ -7,12 +8,15 @@ import { mdiMenu, mdiClose } from '@mdi/js';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        
         {/* Logo di kiri */}
         <Link href="/" className="navbar-brand text-white" legacyBehavior>
           <Image
@@ -24,6 +28,18 @@ export default function Navbar() {
             priority
           />
         </Link>
+
+        {/* Mobile menu button (visible on small screens) */}
+        <button 
+          className="d-lg-none btn btn-link text-white p-0"
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+        >
+          <Icon 
+            path={isMenuOpen ? mdiClose : mdiMenu} 
+            size={1.5}
+          />
+        </button>
 
         {/* Menu - Tengah pada layar besar */}
         <div className={`custom-collapse ${isMenuOpen ? 'show' : ''}`}>
@@ -37,9 +53,9 @@ export default function Navbar() {
             <li className="nav-item">
               <Link href="/service" className="nav-link">Our Services</Link>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link href="/porto-showcase" className="nav-link">Showcase</Link>
-            </li> */}
+            </li>
           </ul>
         </div>
 

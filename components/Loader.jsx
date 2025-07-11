@@ -1,6 +1,7 @@
 // components/Loader.jsx
 "use client";
 
+import React from 'react'; // Added React import
 import { PuffLoader } from "react-spinners";
 
 const Loader = () => {
